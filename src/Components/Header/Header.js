@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './Header.scss';
 import { PropTypes } from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 class Header extends Component {
 
@@ -18,6 +20,10 @@ class Header extends Component {
                         <div className={'surname'}>Philippine</div>
                         <div className={'name'}>Cluniat</div>
                     </div>
+                </div>
+
+                <div className={"info"}>
+                    <FontAwesomeIcon icon="map-marker-alt" />
                 </div>
 
 
