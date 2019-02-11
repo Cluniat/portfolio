@@ -6,24 +6,28 @@ class Header extends Component {
 
     constructor(props) {
         super(props);
-        this.state = {
-            age: null
-        }
     }
 
     render() {
         return (
             <div className="header">
-                coucou {this.props.name}
+
+                <div className={"identity"}>
+                    <div className={"photo"}>Ceci est une photo</div>
+                    <div className={"entire-name"}>
+                        <div className={'surname'}>Philippine</div>
+                        <div className={'name'}>Cluniat</div>
+                    </div>
+                </div>
+
+
             </div>
         );
     }
 
 }
 
-Header.propTypes = {
-    name: PropTypes.string.isRequired,
-}
+Header.propTypes = {}
 
 
 export default Header;
