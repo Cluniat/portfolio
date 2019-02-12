@@ -24,25 +24,25 @@ class Header extends Component {
 
                 <div className={"info"}>
                     <div className={"line"}>
-                        <FontAwesomeIcon icon="map-marker-alt"/>
+                        <FontAwesomeIcon className={"font-awesome"} icon="map-marker-alt"/>
                         <div className="text">56 rue Dedieu 69100 Villeurbanne</div>
                     </div>
                     <div className={"line"}>
-                        <FontAwesomeIcon icon="phone"/>
+                        <FontAwesomeIcon className={"font-awesome"} icon="phone"/>
                         <div className="text">06 28 20 81 46</div>
                     </div>
                     <div className={"line"}>
-                        <FontAwesomeIcon icon="envelope"/>
+                        <FontAwesomeIcon className={"font-awesome"} icon="envelope"/>
                         <div className="text">philippine.cluniat@gmail.com</div>
                     </div>
-                    <div className={"line"}>
-                        <FontAwesomeIcon icon={['fab', 'github']}/>
+                    <a className={"line"} href={"https://github.com/Cluniat"} target={"_blank"}>
+                        <FontAwesomeIcon className={"font-awesome"} icon={['fab', 'github']}/>
                         <div className="text">CLUNIAT</div>
-                    </div>
-                    <div className={"line"}>
-                        <FontAwesomeIcon icon={['fab', 'linkedin']}/>
+                    </a>
+                    <a className={"line"} href={"https://www.linkedin.com/in/philippine-cluniat-39ab0b158/"} target={"_blank"}>
+                        <FontAwesomeIcon className={"font-awesome"} icon={['fab', 'linkedin']}/>
                         <div className="text">Philippine Cluniat</div>
-                    </div>
+                    </a>
                 </div>
 
                 <div className={"icons"}>
