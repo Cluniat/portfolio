@@ -1,0 +1,35 @@
+@font-face {
+    font-family: 'icomoon';
+    src:  url('font/icomoon.eot?e6ppj0');
+    src:  url('font/icomoon.eot?e6ppj0#iefix') format('embedded-opentype'),
+    url('font/icomoon.ttf?e6ppj0') format('truetype'),
+    url('font/icomoon.woff?e6ppj0') format('woff'),
+    url('font/icomoon.svg?e6ppj0#icomoon') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+    /* use !important to prevent issues with browser extensions that change fonts */
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    /* Better Font Rendering =========== */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-books-stack-of-three:before {
+    content: "\e900";
+}
+.icon-tennis-raquet-and-ball:before {
+    content: "\e901";
+}
+.icon-world:before {
+    content: "\e902";
+}

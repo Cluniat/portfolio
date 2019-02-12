@@ -45,6 +45,12 @@ class Header extends Component {
                     </div>
                 </div>
 
+                <div className={"icons"}>
+                    <i className={"icon-world"}/>
+                    <i className={"icon-tennis-raquet-and-ball"}/>
+                    <i className={"icon-books-stack-of-three"}/>
+                </div>
+
 
             </div>
         );
