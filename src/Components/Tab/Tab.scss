@@ -9,4 +9,9 @@
   font-size: 70px;
   color: $pink;
   padding: 20px;
+  &:hover {
+    background-color: $blue;
+    opacity: 0.3;
+    color: black;
+  }
 }
