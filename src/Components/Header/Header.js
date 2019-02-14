@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import './Header.scss';
-import { PropTypes } from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import logo from "../../Assets/images/philippine-cluniat.png";
 
 
 class Header extends Component {
-
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         return (
@@ -16,10 +12,7 @@ class Header extends Component {
 
                 <div className={"identity"}>
                     <div className={"photo"}>Ceci est une photo</div>
-                    <div className={"entire-name"}>
-                        <div className={'surname'}>Philippine</div>
-                        <div className={'name'}>Cluniat</div>
-                    </div>
+                    <img src={logo} alt={"Philippine Cluniat"} height={"100"} width={"300"}/>
                 </div>
 
                 <div className={"info"}>
@@ -57,8 +50,5 @@ class Header extends Component {
     }
 
 }
-
-Header.propTypes = {}
-
 
 export default Header;

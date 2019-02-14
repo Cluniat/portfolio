@@ -8,6 +8,11 @@
   width: 100%;
   display: flex;
   justify-content: space-around;
+  @media screen and (max-width: 650px) {
+    flex-direction: column;
+    height: 800px;
+    padding: 0 20px;
+  }
 
   .identity {
     display: flex;
@@ -26,21 +31,26 @@
     background-color: black;
     color: $white;
     width: 100%;
+    margin-bottom: 10px;
   }
 
   .entire-name {
     font-size: 40px;
     color: $pink;
-    background-color: $white;
-    height: fit-content;
-    width: fit-content;
     display: flex;
     justify-content: center;
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    padding: 0 5px;
-    margin-top: 20px;
+    paint-order: stroke fill;
+    width: 100%;
+    height: 100%;
+  }
+  text {
+    text-anchor: middle;
+    font-size: 30px;
+    stroke: white;
+    stroke-width: 10;
   }
 
   .name {
@@ -72,6 +82,7 @@
     align-items: flex-start;
     justify-content: space-around;
     width: 330px;
+    height: 380px;
     padding: 10px;
   }
 
@@ -85,6 +96,20 @@
     -webkit-text-fill-color: $pink;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: $white;
+    @media screen and (max-width: 800px) and (min-width: 650px) {
+      display: none;
+    }
+    @media screen and (max-width: 650px) and (min-width: 430px) {
+      display: flex;
+      position: absolute;
+      right: 20px;
+      top: 0;
+      height: 800px;
+    }
+
+    @media screen and (max-width: 430px) {
+      display: none;
+    }
   }
 
 }
