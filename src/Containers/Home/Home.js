@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './Home.scss';
 import Header from "../../Components/Header/Header";
+import Tab from "../../Components/Tab/Tab";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -17,7 +18,13 @@ class Home extends Component {
     library.add(faGithub);
     library.add(faLinkedin);
     return (
-      <Header ></Header>
+        <div>
+          <Header/>
+          <Tab title={"Formation"} />
+          <Tab title={"Projets"} />
+          <Tab title={"Compétences"} />
+          <Tab title={"Expériences professionnelles"} />
+        </div>
     );
   }
 }
