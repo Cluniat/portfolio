@@ -28,11 +28,11 @@ class Header extends Component {
                         <FontAwesomeIcon className={"font-awesome"} icon="envelope"/>
                         <div className="text">philippine.cluniat@gmail.com</div>
                     </div>
-                    <a className={"line"} href={"https://github.com/Cluniat"} target={"_blank"}>
+                    <a className={"line"} href={"https://github.com/Cluniat"} target={"_blank"} rel= {"noopener noreferrer"}>
                         <FontAwesomeIcon className={"font-awesome"} icon={['fab', 'github']}/>
                         <div className="text">CLUNIAT</div>
                     </a>
-                    <a className={"line"} href={"https://www.linkedin.com/in/philippine-cluniat-39ab0b158/"} target={"_blank"}>
+                    <a className={"line"} href={"https://www.linkedin.com/in/philippine-cluniat-39ab0b158/"} target={"_blank"} rel= {"noopener noreferrer"}>
                         <FontAwesomeIcon className={"font-awesome"} icon={['fab', 'linkedin']}/>
                         <div className="text">Philippine Cluniat</div>
                     </a>

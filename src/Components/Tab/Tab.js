@@ -4,15 +4,14 @@ import './Tab.scss';
 
 class Tab extends Component {
 
-    constructor(props) {
-        super(props);
-    }
-
     render() {
         return (
             <div className={"tab"}>
                 <div className={"title"}>
                     {this.props.title.toUpperCase()}
+                </div>
+                <div className={"content"}>
+                    {this.props.children}
                 </div>
             </div>
         );

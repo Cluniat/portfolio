@@ -5,12 +5,12 @@ import FormationContent from "../../Components/FormationContent/FormationContent
 import Tab from "../../Components/Tab/Tab";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
-import { faMapMarkerAlt, faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons';
+import { faMapMarkerAlt, faPhone, faEnvelope, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 
 class Home extends Component {
 
   render() {
-    library.add(faMapMarkerAlt,faPhone, faEnvelope, faGithub, faLinkedin);
+    library.add(faMapMarkerAlt,faPhone, faEnvelope, faGithub, faLinkedin, faEllipsisH);
     return (
         <div>
           <Header/>
