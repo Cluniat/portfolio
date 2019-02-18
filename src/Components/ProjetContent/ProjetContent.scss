@@ -1,0 +1,36 @@
+@import "../../Assets/colors";
+
+.projet {
+  color: $darkgrey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  .name-technos {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .project-name {
+      font-size: 45px;
+    }
+    .technos {
+      font-size: 40px;
+    }
+  }
+  .project-description {
+    font-size: 30px;
+  }
+  .pipe {
+    background-color: $pink;
+    width: 5px;
+    height: 70px;
+    margin: 0 20px;
+    //@media screen and (max-width: 837px) {
+    //  display: none;
+    //}
+  }
+}
+
+.more {
+  color: $pink;
+}

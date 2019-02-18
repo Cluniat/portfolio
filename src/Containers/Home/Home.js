@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Home.scss';
 import Header from "../../Components/Header/Header";
 import FormationContent from "../../Components/FormationContent/FormationContent";
+import ProjetContent from "../../Components/ProjetContent/ProjetContent";
 import Tab from "../../Components/Tab/Tab";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -17,7 +18,9 @@ class Home extends Component {
           <Tab title={"Formation"}>
             <FormationContent/>
           </Tab>
-          <Tab title={"Projets"} />
+            <Tab title={"Projets"}>
+                <ProjetContent/>
+            </Tab>
           <Tab title={"Compétences"} />
           <Tab title={"Expériences professionnelles"} />
         </div>

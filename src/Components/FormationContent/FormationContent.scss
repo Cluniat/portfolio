@@ -17,7 +17,7 @@
   justify-content: center;
   align-items: center;
   color: $darkgrey;
-  @media screen and (max-width: 740px) {
+  @media screen and (max-width: 837px) {
     margin-top: 0;
     flex-direction: column;
   }
@@ -25,17 +25,21 @@
     color: $blue;
     margin-right: 10px;
   }
-}
-
-.pipe {
-  background-color: $pink;
-  width: 5px;
-  height: 70px;
-  margin: 0 20px;
-  @media screen and (max-width: 740px) {
-    display: none;
+  .year {
+    font-size: 50px;
+  }
+  .pipe {
+    background-color: $pink;
+    width: 5px;
+    height: 70px;
+    margin: 0 20px;
+    @media screen and (max-width: 837px) {
+      display: none;
+    }
   }
 }
+
+
 
 .place {
   display: flex;
