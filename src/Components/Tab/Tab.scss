@@ -13,4 +13,11 @@
     background-color: rgba($blue, 0.3);
     cursor: pointer;
   }
+
+  .title {
+    white-space: nowrap;
+    overflow: hidden;
+    width: 100%;
+    text-overflow: ellipsis;
+  }
 }

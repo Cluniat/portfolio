@@ -8,6 +8,7 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faMapMarkerAlt, faPhone, faEnvelope, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import CompetenceContent from "../../Components/CompetenceContent/CompetenceContent";
+import ExperienceContent from "../../Components/ExperienceContent/ExperienceContent";
 
 class Home extends Component {
 
@@ -25,7 +26,9 @@ class Home extends Component {
             <Tab title={"Compétences"}>
                 <CompetenceContent/>
             </Tab>
-          <Tab title={"Expériences professionnelles"} />
+            <Tab title={"Expériences professionnelles"}>
+                <ExperienceContent/>
+            </Tab>
         </div>
     );
   }
