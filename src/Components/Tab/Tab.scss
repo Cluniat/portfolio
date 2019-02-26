@@ -3,14 +3,12 @@
 
 .tab {
   background-color: $grey;
-  height: 300px;
   margin: 20px 0;
+  height: 100%;
   font-size: 70px;
   color: $pink;
   padding: 20px;
-  @media screen and (max-width: 600px) {
-    height: 350px;
-  }
+
   &:hover {
     background-color: rgba($blue, 0.3);
     cursor: pointer;
