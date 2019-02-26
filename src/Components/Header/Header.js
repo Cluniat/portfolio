@@ -12,17 +12,15 @@ class Header extends Component {
 
                 <div className={"identity"}>
                     <div className={"photo"}>Ceci est une photo</div>
-                    <img src={logo} alt={"Philippine Cluniat"} height={"100"} width={"300"}/>
                 </div>
 
                 <div className={"info"}>
                     <div className={"line"}>
-                        <FontAwesomeIcon className={"font-awesome"} icon="map-marker-alt"/>
-                        <div className="text">56 rue Dedieu 69100 Villeurbanne</div>
+                        <img src={logo} alt={"Philippine Cluniat"} height={"100"} width={"300"}/>
                     </div>
                     <div className={"line"}>
-                        <FontAwesomeIcon className={"font-awesome"} icon="phone"/>
-                        <div className="text">06 28 20 81 46</div>
+                        <FontAwesomeIcon className={"font-awesome"} icon="map-marker-alt"/>
+                        <div className="text">LYON</div>
                     </div>
                     <div className={"line"}>
                         <FontAwesomeIcon className={"font-awesome"} icon="envelope"/>
