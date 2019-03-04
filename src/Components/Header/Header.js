@@ -16,7 +16,7 @@ class Header extends Component {
 
                 <div className={"info"}>
                     <div className={"line"}>
-                        <img src={logo} alt={"Philippine Cluniat"} height={"100"} width={"300"}/>
+                        <img className={"logo"} src={logo} alt={"Philippine Cluniat"}/>
                     </div>
                     <div className={"line"}>
                         <FontAwesomeIcon className={"font-awesome"} icon="map-marker-alt"/>
