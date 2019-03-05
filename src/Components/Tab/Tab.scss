@@ -1,0 +1,21 @@
+@import "../../Assets/colors";
+
+
+.tab {
+  background-color: $grey;
+  margin: 20px 0;
+  height: 100%;
+  font-size: 70px;
+  color: $pink;
+  padding: 20px;
+
+  &:hover {
+    background-color: rgba($blue, 0.3);
+    cursor: pointer;
+  }
+
+  .title {
+    overflow: hidden;
+    width: 100%;
+  }
+}

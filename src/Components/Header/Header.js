@@ -12,27 +12,25 @@ class Header extends Component {
 
                 <div className={"identity"}>
                     <div className={"photo"}>Ceci est une photo</div>
-                    <img src={logo} alt={"Philippine Cluniat"} height={"100"} width={"300"}/>
                 </div>
 
                 <div className={"info"}>
                     <div className={"line"}>
-                        <FontAwesomeIcon className={"font-awesome"} icon="map-marker-alt"/>
-                        <div className="text">56 rue Dedieu 69100 Villeurbanne</div>
+                        <img className={"logo"} src={logo} alt={"Philippine Cluniat"}/>
                     </div>
                     <div className={"line"}>
-                        <FontAwesomeIcon className={"font-awesome"} icon="phone"/>
-                        <div className="text">06 28 20 81 46</div>
+                        <FontAwesomeIcon className={"font-awesome"} icon="map-marker-alt"/>
+                        <div className="text">LYON</div>
                     </div>
                     <div className={"line"}>
                         <FontAwesomeIcon className={"font-awesome"} icon="envelope"/>
                         <div className="text">philippine.cluniat@gmail.com</div>
                     </div>
-                    <a className={"line"} href={"https://github.com/Cluniat"} target={"_blank"}>
+                    <a className={"line"} href={"https://github.com/Cluniat"} target={"_blank"} rel= {"noopener noreferrer"}>
                         <FontAwesomeIcon className={"font-awesome"} icon={['fab', 'github']}/>
                         <div className="text">CLUNIAT</div>
                     </a>
-                    <a className={"line"} href={"https://www.linkedin.com/in/philippine-cluniat-39ab0b158/"} target={"_blank"}>
+                    <a className={"line"} href={"https://www.linkedin.com/in/philippine-cluniat-39ab0b158/"} target={"_blank"} rel= {"noopener noreferrer"}>
                         <FontAwesomeIcon className={"font-awesome"} icon={['fab', 'linkedin']}/>
                         <div className="text">Philippine Cluniat</div>
                     </a>

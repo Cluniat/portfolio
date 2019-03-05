@@ -1,0 +1,48 @@
+@import "../../Assets/colors";
+.formation-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  .formation {
+    margin-top: 20px;
+    font-size: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    color: $darkgrey;
+    @media screen and (max-width: 837px) {
+      margin-top: 0;
+      flex-direction: column;
+    }
+    .font-awesome {
+      color: $blue;
+      margin-right: 10px;
+    }
+    .year {
+      font-size: 50px;
+    }
+    .pipe {
+      background-color: $pink;
+      width: 5px;
+      height: 70px;
+      margin: 0 20px;
+      @media screen and (max-width: 837px) {
+        display: none;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+.place {
+  display: flex;
+  align-items: center;
+}

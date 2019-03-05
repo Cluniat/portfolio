@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Home from './Containers/Home/Home';
 import * as serviceWorker from './serviceWorker';
+import './Assets/common.scss';
 
 ReactDOM.render(<Home />, document.getElementById('root'));
 

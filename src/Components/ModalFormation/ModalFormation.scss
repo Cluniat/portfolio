@@ -1,0 +1,51 @@
+@import "../../Assets/colors";
+.modal-formation {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+
+  .formation {
+    margin-top: 20px;
+    font-size: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: right;
+    align-items: center;
+    color: $darkgrey;
+    @media screen and (max-width: 837px) {
+      margin-top: 0;
+      font-size: 15px;
+    }
+    @media screen and (max-width: 510px) {
+      flex-direction: column;
+    }
+    .font-awesome {
+      color: $blue;
+      margin-right: 10px;
+    }
+    .year {
+      font-size: 40px;
+      @media screen and (max-width: 837px) {
+        font-size: 20px;
+      }
+    }
+    .pipe {
+      background-color: $pink;
+      width: 5px;
+      height: 70px;
+      margin: 0 20px;
+      @media screen and (max-width: 510px) {
+        display: none;
+      }
+    }
+  }
+}
+
+
+.place {
+  display: flex;
+  align-items: center;
+}
