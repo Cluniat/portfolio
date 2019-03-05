@@ -4,6 +4,7 @@ import './Tab.scss';
 import Modal from "../../Components/Modal/Modal";
 import ModalFormation from "../ModalFormation/ModalFormation";
 import ModalCompetence from "../ModalCompetence/ModalCompetence";
+import ModalExperience from "../ModalExperience/ModalExperience";
 
 
 class Tab extends Component {
@@ -23,6 +24,9 @@ class Tab extends Component {
         }
         else if(this.props.isCompetence) {
             return <ModalCompetence/>;
+        }
+        else if(this.props.isExperience) {
+            return <ModalExperience/>;
         }
         else {
             return null;

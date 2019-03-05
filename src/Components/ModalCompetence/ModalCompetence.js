@@ -25,12 +25,12 @@ class ModalCompetence extends Component {
                 <img className={"icon"} src={java} alt={"java"} height={"5%"} width={"5%"}/>
                 <img className={"icon"} src={laravel} alt={"laravel"} height={"15%"} width={"15%"}/>
                 <img className={"icon"} src={netcore} alt={"netcore"} height={"10%"} width={"10%"}/>
+                <img className={"icon"} src={php} alt={"php"} height={"10%"} width={"10%"}/>
                 <img className={"icon"} src={git} alt={"git"} height={"10%"} width={"10%"}/>
                 <img className={"icon"} src={sass} alt={"sass"} height={"10%"} width={"10%"}/>
                 <img className={"icon"} src={html} alt={"html"} height={"10%"} width={"10%"}/>
                 <img className={"icon"} src={css} alt={"css"} height={"10%"} width={"10%"}/>
                 <img className={"icon"} src={js} alt={"js"} height={"10%"} width={"10%"}/>
-                <img className={"icon"} src={php} alt={"php"} height={"10%"} width={"10%"}/>
             </div>
         );
 

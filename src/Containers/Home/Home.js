@@ -26,7 +26,7 @@ class Home extends Component {
             <Tab title={"Compétences"} isCompetence={true}>
                 <CompetenceContent/>
             </Tab>
-            <Tab title={"Expériences professionnelles"}>
+            <Tab title={"Expériences"} isExperience={true}>
                 <ExperienceContent/>
             </Tab>
         </div>

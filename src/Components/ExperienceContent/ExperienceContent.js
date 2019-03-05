@@ -8,13 +8,13 @@ class ExperienceContent extends Component {
         return (
             <div className={"experience-content"}>
                 <div className={"experience"}>
-                    <div className={"year"}>2018 / 2019</div>
+                    <div className={"year"}>2018</div>
                     <div className={"pipe"}/>
                     <div className={"details"}>
-                        <div className={"poste"}>Designer</div>
+                        <div className={"poste"}>Stage développement web</div>
                         <div className={"place"}>
                             <FontAwesomeIcon className={"font-awesome"} icon="map-marker-alt"/>
-                            <div className={"place-name"}>BDE Polytech Lyon</div>
+                            <div className={"place-name"}>ApolloSSC Lyon</div>
                         </div>
                     </div>
                 </div>

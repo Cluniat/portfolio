@@ -1,12 +1,13 @@
 @import "../../Assets/colors";
-.modal-formation {
+
+.modal-experience {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   height: 100%;
 
-  .formation {
+  .experience {
     margin-top: 20px;
     font-size: 20px;
     display: flex;
@@ -28,8 +29,11 @@
     }
     .year {
       font-size: 40px;
+      width: 157px;
+      text-align: right;
       @media screen and (max-width: 837px) {
         font-size: 20px;
+        text-align: center;
       }
     }
     .pipe {
