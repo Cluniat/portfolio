@@ -24,6 +24,9 @@
 .title {
   font-size: 70px;
   color: $pink;
+  @media screen and (max-width: 837px) {
+    font-size: 50px;
+  }
 }
 
 #modal-container {

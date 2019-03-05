@@ -80,6 +80,9 @@
     width: 330px;
     height: 380px;
     padding: 10px;
+    @media screen and (max-width: 320px) {
+      width: 100%;
+    }
   }
 
   .icons {
