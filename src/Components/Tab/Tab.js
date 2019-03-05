@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import './Tab.scss';
 import Modal from "../../Components/Modal/Modal";
 import ModalFormation from "../ModalFormation/ModalFormation";
+import ModalCompetence from "../ModalCompetence/ModalCompetence";
 
 
 class Tab extends Component {
@@ -19,6 +20,9 @@ class Tab extends Component {
     getContent() {
         if(this.props.isFormation) {
             return <ModalFormation/>;
+        }
+        else if(this.props.isCompetence) {
+            return <ModalCompetence/>;
         }
         else {
             return null;

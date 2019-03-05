@@ -23,7 +23,7 @@ class Home extends Component {
             <Tab title={"Projets"} hasModal={false}>
                 <ProjetContent/>
             </Tab>
-            <Tab title={"Compétences"}>
+            <Tab title={"Compétences"} isCompetence={true}>
                 <CompetenceContent/>
             </Tab>
             <Tab title={"Expériences professionnelles"}>
