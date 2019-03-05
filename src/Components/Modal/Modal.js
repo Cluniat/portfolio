@@ -13,8 +13,6 @@ class Modal extends Component {
 
     toggle() {
         this.setState({animateIn: !this.state.animateIn});
-
-        console.log('in', this.state.animateIn);
     }
     close() {
         this.toggle();
@@ -38,8 +36,14 @@ class Modal extends Component {
                 <div id="modal-container" className={containerClass.join(' ')} onClick={this.close.bind(this)}>
                     <div className="modal-background">
                         <div className="modal">
-                            <h2>I'm a Modal</h2>
-                            <p>Hear me roar.</p>
+                            <div className={"modal-content"}>
+                                <div className={"title"}>
+                                    {this.props.title.toUpperCase()}
+                                </div>
+                                <div className={"tab-content"}>
+                                    {this.props.children}
+                                </div>
+                            </div>
                             <svg className="modal-svg" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"
                                  preserveAspectRatio="none">
                                 <rect x="0" y="0" fill="none" width="226" height="162" rx="3" ry="3"/>
@@ -47,13 +51,6 @@ class Modal extends Component {
                         </div>
                     </div>
                 </div>
-
-                {/*<div className="content">*/}
-                    {/*<h1>Modal Animations</h1>*/}
-                    {/*<div className="buttons" onClick={this.toggle.bind(this)}>*/}
-                        {/*<div id="one" className="button">Unfolding</div>*/}
-                    {/*</div>*/}
-                {/*</div>*/}
             </div>
         );
     }
@@ -61,11 +58,12 @@ class Modal extends Component {
 
 Modal.propTypes = {
     visible: PropTypes.bool,
-    onClose: PropTypes.func
+    onClose: PropTypes.func,
+    title: PropTypes.string,
 };
 
 Modal.defaultProps = {
-    visible: false
+    visible: false,
 };
 
 export default Modal;

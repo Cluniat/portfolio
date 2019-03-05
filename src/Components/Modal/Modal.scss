@@ -1,3 +1,5 @@
+@import "../../Assets/colors";
+
 * {
   box-sizing:border-box;
 }
@@ -11,6 +13,17 @@
   &.modal-active {
     overflow: hidden;
   }
+}
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  font-size: 70px;
+  color: $pink;
 }
 
 #modal-container {

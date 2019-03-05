@@ -1,5 +1,5 @@
 @import "../../Assets/colors";
-.formation-content {
+.modal-formation {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,11 +7,12 @@
   height: 100%;
   .formation {
     margin-top: 20px;
-    font-size: 30px;
+    margin-left: 40%;
+    font-size: 20px;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: center;
+    justify-content: right;
     align-items: center;
     color: $darkgrey;
     @media screen and (max-width: 837px) {
@@ -23,7 +24,7 @@
       margin-right: 10px;
     }
     .year {
-      font-size: 50px;
+      font-size: 40px;
     }
     .pipe {
       background-color: $pink;

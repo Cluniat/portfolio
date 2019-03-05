@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './Tab.scss';
 import Modal from "../../Components/Modal/Modal";
+import ModalFormation from "../ModalFormation/ModalFormation";
 
 
 class Tab extends Component {
@@ -13,6 +14,15 @@ class Tab extends Component {
 
     toggleModal() {
         this.setState({displayModal: !this.state.displayModal});
+    }
+
+    getContent() {
+        if(this.props.isFormation) {
+            return <ModalFormation/>;
+        }
+        else {
+            return null;
+        }
     }
 
 
@@ -28,8 +38,10 @@ class Tab extends Component {
                     </div>
                 </div>
                 {
-                    this.state.displayModal ?
-                <Modal visible={this.state.displayModal} onClose={this.toggleModal.bind(this)} /> : null }
+                    (this.state.displayModal && this.props.hasModal) ?
+                        <Modal visible={this.state.displayModal} onClose={this.toggleModal.bind(this)} title={this.props.title}>
+                            {this.getContent()}
+                        </Modal> : null }
             </div>
 
         );
@@ -38,9 +50,17 @@ class Tab extends Component {
 
 Tab.propTypes = {
     title: PropTypes.string,
+    hasModal: PropTypes.bool,
+    isFormation: PropTypes.bool,
+    isCompetence: PropTypes.bool,
+    isExperience: PropTypes.bool,
 };
 
 Tab.defaultProps = {
     title: '',
+    hasModal: true,
+    isFormation: false,
+    isCompetence: false,
+    isExperience: false,
 };
 export default Tab;

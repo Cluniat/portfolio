@@ -17,10 +17,10 @@ class Home extends Component {
     return (
         <div>
           <Header/>
-          <Tab title={"Formation"}>
+          <Tab title={"Formation"} isFormation={true}>
             <FormationContent/>
           </Tab>
-            <Tab title={"Projets"}>
+            <Tab title={"Projets"} hasModal={false}>
                 <ProjetContent/>
             </Tab>
             <Tab title={"Compétences"}>
