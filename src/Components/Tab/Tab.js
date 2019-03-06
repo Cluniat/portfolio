@@ -36,8 +36,8 @@ class Tab extends Component {
     render() {
         return (
             <div>
-                <div className={"tab"} onClick={<Redirect to="/project" push />}>
                 {/*<div className={"tab"} onClick={(this.props.hasModal) ? this.toggleModal.bind(this) : <Link to="/project" />}>*/}
+                <div className={"tab"} onClick={this.toggleModal.bind(this)}>
                     <div className={"title"}>
                         {this.props.title.toUpperCase()}
                     </div>
