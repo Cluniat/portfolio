@@ -1,11 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './Containers/Home/Home';
 import * as serviceWorker from './serviceWorker';
 import './Assets/common.scss';
-import {BrowserRouter, Route, Router} from "react-router-dom";
+import {BrowserRouter} from "react-router-dom";
 import AppRoute from "./AppRoute";
-import Project from "./Containers/Project/Project";
 
 
 // ReactDOM.render(<Home/>, document.getElementById('root'));
