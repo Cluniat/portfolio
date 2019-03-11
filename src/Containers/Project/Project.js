@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ProjectHeader from '../../Components/ProjectHeader/ProjectHeader'
-import Carousel from "../../Components/Carousel/Carousel";
+import ProjectBody from "../../Components/ProjectBody/ProjectBody";
 
 
 
@@ -12,7 +12,7 @@ class Project extends Component {
         return (
             <div>
                 <ProjectHeader/>
-                <Carousel/>
+                <ProjectBody/>
             </div>
 
         );

@@ -1,0 +1,18 @@
+@import "../../Assets/colors";
+
+.project-body {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+
+  .blue-bar {
+    width: 15%;
+    height: 700px;
+    background-color: $blue;
+  }
+
+  .carousel {
+    width: 500px;
+    margin: 50px;
+  }
+}

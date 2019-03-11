@@ -6,13 +6,14 @@ import InfoProject from "../InfoProject/InfoProject";
 class Carousel extends React.Component {
     render() {
         var settings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            adaptiveHeight: true
-        };
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                adaptiveHeight: true,
+            };
+
         return (
             <Slider {...settings}>
                 <div>
