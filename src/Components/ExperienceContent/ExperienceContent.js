@@ -17,6 +17,14 @@ class ExperienceContent extends Component {
                             <div className={"place-name"}>ApolloSSC Lyon</div>
                         </div>
                     </div>
+                    <div className={"dots"}>
+                        <FontAwesomeIcon icon={"ellipsis-h"}/>
+                        <FontAwesomeIcon icon={"ellipsis-h"}/>
+                        <FontAwesomeIcon icon={"ellipsis-h"}/>
+                    </div>
+                    <div className={"cpt"}>
+                        ANGULAR 7  ASP.NET CORE
+                    </div>
                 </div>
                 <div className={"more"}>
                     <FontAwesomeIcon icon={"ellipsis-h"}/>
