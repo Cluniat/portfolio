@@ -55,7 +55,9 @@ class Carousel extends React.Component {
                         title={"Video Game"}
                         description={"Site web permettant l'affichage et la recherche de jeux vidéos depuis une API. Développé en VueJS 2 (visuels, gestion de projet)"}
                         technos={"VueJS Axios VueX Git Trello"}
-                        collapse={this.state.nextSlide !== 0}/>
+                        collapse={this.state.nextSlide !== 0}
+                        link={"https://github.com/Cluniat/VideoGame"}
+                    />
 
                 </div>
                 <div>
@@ -63,21 +65,24 @@ class Carousel extends React.Component {
                         title={"Portfolio"}
                         description={"Site web portfolio. Développé en ReactJS et Laravel, entièrement administrable. Hébergé sur Raspberry PI"}
                         technos={"ReactJS Laravel Redux Git"}
-                        collapse={this.state.nextSlide !== 1}/>
+                        collapse={this.state.nextSlide !== 1}
+                        link={"https://github.com/Cluniat/portfolio"}/>
                 </div>
                 <div>
                     <InfoProject
                         title={"Projet Web"}
                         description={"Création d'un site e-commerce sous le framework Laravel. Création d'une architecture SASS pour les feuilles de style"}
                         technos={"laravel sass php blade git"}
-                        collapse={this.state.nextSlide !== 2}/>
+                        collapse={this.state.nextSlide !== 2}
+                        link={"https://github.com/Cluniat/Laravel-SASS"}/>
                 </div>
                 <div>
                     <InfoProject
                         title={"Graphes"}
                         description={"Implémentation, optimisation et comparaison d'algorithmes de coloration de graphes"}
                         technos={"java theorie des graphes"}
-                        collapse={this.state.nextSlide !== 3}/>
+                        collapse={this.state.nextSlide !== 3}
+                        link={"https://github.com/Cluniat/GraphColo"}/>
                 </div>
             </Slider>
         );

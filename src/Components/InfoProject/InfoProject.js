@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './InfoProject.scss';
 import PropTypes from 'prop-types';
 import Modal from "../Modal/Modal";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
 
@@ -48,7 +49,9 @@ class InfoProject extends Component {
         return (
             <div className={"info-project"}>
                 <div className={"light-square top"}>
-                    <div className={"title"}> {this.resizeString(true, false)} </div>
+                    <a href={this.props.link} target={"_blank"} rel= {"noopener noreferrer"}>
+                        <div className={"title"}> {this.resizeString(true, false)} </div>
+                    </a>
                 </div>
                     {
                         <div className={this.addDescription()}>
@@ -67,7 +70,8 @@ InfoProject.propTypes = {
     title: PropTypes.string,
     description: PropTypes.string,
     technos: PropTypes.string,
-    collapse: PropTypes.bool
+    collapse: PropTypes.bool,
+    link: PropTypes.string,
 };
 
 Modal.defaultProps = {
