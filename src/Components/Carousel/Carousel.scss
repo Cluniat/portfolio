@@ -1,9 +1,9 @@
 @import "../../Assets/colors";
 
-.slick-dots {
-  text-align: right;
-  right: 150px;
-}
+//.slick-dots {
+//  text-align: right;
+//  right: 150px;
+//}
 
 
 .slick-prev:before, .slick-next:before {
@@ -12,3 +12,18 @@
   height: 50px;
   font-size: 50px;
 }
+
+.slick-prev {
+  left: 25px;
+}
+
+.slick-next {
+  right: 45px;
+}
+
+.slick-slide {
+  display: flex !important;
+  justify-content: center;
+}
+
+.slick-slide, .slick-slide *{ outline: none !important; }

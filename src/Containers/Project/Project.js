@@ -3,7 +3,6 @@ import ProjectHeader from '../../Components/ProjectHeader/ProjectHeader'
 import ProjectBody from "../../Components/ProjectBody/ProjectBody";
 
 
-
 class Project extends Component {
 
 

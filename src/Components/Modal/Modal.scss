@@ -10,6 +10,13 @@
   background-size:cover;
   background-position:top center;
   font-weight:200;
+  .title {
+    font-size: 70px;
+    color: $pink;
+    @media screen and (max-width: 837px) {
+      font-size: 50px;
+    }
+  }
   &.modal-active {
     overflow: hidden;
   }
@@ -19,14 +26,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-
-.title {
-  font-size: 70px;
-  color: $pink;
-  @media screen and (max-width: 837px) {
-    font-size: 50px;
-  }
 }
 
 #modal-container {

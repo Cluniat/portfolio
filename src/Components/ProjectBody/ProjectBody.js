@@ -12,7 +12,6 @@ class ProjectBody extends Component {
         return (
             <div className={"project-body"}>
                 <div className={"carousel"}> <Carousel/> </div>
-                <div className={"blue-bar"}/>
             </div>
 
         );

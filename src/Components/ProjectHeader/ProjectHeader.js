@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './ProjectHeader.scss';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from "../../Assets/images/philippine-cluniat.png";
 
 
