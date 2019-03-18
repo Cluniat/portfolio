@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import ProjectHeader from '../../Components/ProjectHeader/ProjectHeader'
-
+import ProjectBody from "../../Components/ProjectBody/ProjectBody";
 
 
 class Project extends Component {
@@ -11,6 +11,7 @@ class Project extends Component {
         return (
             <div>
                 <ProjectHeader/>
+                <ProjectBody/>
             </div>
 
         );

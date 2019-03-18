@@ -1,0 +1,88 @@
+@import "../../Assets/colors";
+
+.info-project {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 400px;
+  @media screen and (max-width: 1330px) and (min-width: 1005px) {
+    width: 300px;
+  }
+  @media screen and (max-width: 400px) {
+    width: 300px;
+  }
+
+
+  .light-square {
+    background-color: $grey;
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    &.top {
+      border-radius: 10px 10px 0 0;
+    }
+    &.bottom {
+      border-radius: 0 0 10px 10px;
+    }
+    .title {
+      color: $darkgrey;
+      font-size: 70px;
+      @media screen and (max-width: 1330px) and (min-width: 1005px) {
+        font-size: 50px;
+      }
+      @media screen and (max-width: 400px) {
+        font-size: 50px;
+      }
+      &:hover {
+        color: $pink;
+      }
+    }
+
+  }
+
+  .dark-square {
+    background-color: $bluegrey;
+    height: 0;
+    width: 100%;
+    color: $darkgrey;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: height 1s ease 0.5s;
+    .description {
+      color: transparent;
+      transition: color 1s ease;
+    }
+    &.show {
+      height: 200px;
+      transition-delay : 0s;
+
+      .description {
+        color: $darkgrey;
+        transition-delay: 0.5s;
+      }
+    }
+  }
+
+  .description {
+    font-size: 35px;
+    text-align: center;
+    @media screen and (max-width: 1330px) and (min-width: 1005px) {
+      font-size: 30px;
+    }
+    @media screen and (max-width: 400px) {
+      font-size: 30px;
+    }
+
+  }
+
+  .technos {
+    color: $pink;
+    font-size: 40px;
+    text-align: center;
+    font-weight: bold;
+  }
+}

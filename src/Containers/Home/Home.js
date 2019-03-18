@@ -9,6 +9,7 @@ import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faMapMarkerAlt, faPhone, faEnvelope, faEllipsisH } from '@fortawesome/free-solid-svg-icons';
 import CompetenceContent from "../../Components/CompetenceContent/CompetenceContent";
 import ExperienceContent from "../../Components/ExperienceContent/ExperienceContent";
+import {Link} from "react-router-dom";
 
 class Home extends Component {
 
@@ -20,9 +21,11 @@ class Home extends Component {
           <Tab title={"Formation"} isFormation={true}>
             <FormationContent/>
           </Tab>
-            <Tab title={"Projets"} hasModal={false}>
-                <ProjetContent/>
-            </Tab>
+            <Link to={"/project"}>
+                <Tab title={"Projets"} hasModal={false}>
+                    <ProjetContent/>
+                </Tab>
+            </Link>
             <Tab title={"Compétences"} isCompetence={true}>
                 <CompetenceContent/>
             </Tab>
