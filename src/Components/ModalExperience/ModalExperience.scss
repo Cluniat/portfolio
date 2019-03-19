@@ -2,26 +2,32 @@
 
 .modal-experience {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  flex-direction: row;
+  justify-content: stretch;
   height: 100%;
 
+  .block {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
   .experience {
     margin-top: 20px;
     font-size: 20px;
     display: flex;
     flex-wrap: wrap;
-    width: 100%;
+    flex-direction: row;
     justify-content: right;
     align-items: center;
+    width: 100%;
     color: $darkgrey;
     @media screen and (max-width: 837px) {
       margin-top: 0;
       font-size: 15px;
     }
-    @media screen and (max-width: 510px) {
+    @media screen and (max-width: 705px) {
       flex-direction: column;
+      align-items: flex-start;
     }
     .font-awesome {
       color: $blue;
@@ -41,8 +47,26 @@
       width: 5px;
       height: 70px;
       margin: 0 20px;
-      @media screen and (max-width: 510px) {
+      @media screen and (max-width: 705px) {
         display: none;
+      }
+    }
+    .dots {
+      font-size: 30px;
+      color: $blue;
+      margin: 0 30px;
+      @media screen and (max-width: 870px) {
+        display: none;
+      }
+    }
+    .cpt {
+      @media screen and (max-width: 870px) {
+        margin: 0 30px;
+        font-weight: bold;
+        color: $blue;
+      }
+      @media screen and (max-width: 705px) {
+        margin: 10px 10px;
       }
     }
   }
