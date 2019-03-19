@@ -20,20 +20,7 @@ class ModalExperience extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
-                <div className={"block"}>
-                    <div className={"dots"}>
-                        <FontAwesomeIcon icon={"ellipsis-h"}/>
-                        <FontAwesomeIcon icon={"ellipsis-h"}/>
-                        <FontAwesomeIcon icon={"ellipsis-h"}/>
-                    </div>
-                    <div className={"cpt"}>
-                        ANGULAR 7  ASP.NET CORE
-                    </div>
-                </div>
-
-                <div className={"experience"}>
-                    <div className={"left-block"}>
+                    <div className={"experience"}>
                         <div className={"year"}>2018 / 2019</div>
                         <div className={"pipe"}/>
                         <div className={"details"}>
@@ -44,19 +31,7 @@ class ModalExperience extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className={"right-block"}>
-                        <div className={"dots"}>
-                            <FontAwesomeIcon icon={"ellipsis-h"}/>
-                            <FontAwesomeIcon icon={"ellipsis-h"}/>
-                            <FontAwesomeIcon icon={"ellipsis-h"}/>
-                        </div>
-                        <div className={"cpt"}>
-                            PHOTOSHOP  VIE ASSOCIATIVE
-                        </div>
-                    </div>
-                </div>
-                <div className={"experience"}>
-                    <div className={"left-block"}>
+                    <div className={"experience"}>
                         <div className={"year"}>été 2017</div>
                         <div className={"pipe"}/>
                         <div className={"details"}>
@@ -67,20 +42,7 @@ class ModalExperience extends Component {
                             </div>
                         </div>
                     </div>
-                    <div className={"right-block"}>
-                        <div className={"dots"}>
-                            <FontAwesomeIcon icon={"ellipsis-h"}/>
-                            <FontAwesomeIcon icon={"ellipsis-h"}/>
-                            <FontAwesomeIcon icon={"ellipsis-h"}/>
-                        </div>
-                        <div className={"cpt"}>
-                            AUTONOMIE  PRISE DE DECISION
-                        </div>
-                    </div>
-
-                </div>
-                <div className={"experience"}>
-                    <div className={"left-block"}>
+                    <div className={"experience"}>
                         <div className={"year"}>2013 / 2015</div>
                         <div className={"pipe"}/>
                         <div className={"details"}>
@@ -91,10 +53,37 @@ class ModalExperience extends Component {
                             </div>
                         </div>
                     </div>
-
-                    <div className={"right-block"}>
+                </div>
+                <div className={"block"}>
+                    <div className={"experience"}>
                         <div className={"dots"}>
                             <FontAwesomeIcon icon={"ellipsis-h"}/>
+                            <FontAwesomeIcon icon={"ellipsis-h"}/>
+                        </div>
+                        <div className={"cpt"}>
+                            ANGULAR 7  ASP.NET CORE
+                        </div>
+                    </div>
+                    <div className={"experience"}>
+                        <div className={"dots"}>
+                            <FontAwesomeIcon icon={"ellipsis-h"}/>
+                            <FontAwesomeIcon icon={"ellipsis-h"}/>
+                        </div>
+                        <div className={"cpt"}>
+                            PHOTOSHOP  VIE ASSOCIATIVE
+                        </div>
+                    </div>
+                    <div className={"experience"}>
+                        <div className={"dots"}>
+                            <FontAwesomeIcon icon={"ellipsis-h"}/>
+                            <FontAwesomeIcon icon={"ellipsis-h"}/>
+                        </div>
+                        <div className={"cpt"}>
+                            AUTONOMIE  PRISE DE DECISION
+                        </div>
+                    </div>
+                    <div className={"experience"}>
+                        <div className={"dots"}>
                             <FontAwesomeIcon icon={"ellipsis-h"}/>
                             <FontAwesomeIcon icon={"ellipsis-h"}/>
                         </div>
@@ -104,7 +93,6 @@ class ModalExperience extends Component {
                     </div>
 
                 </div>
-
             </div>
         );
 
