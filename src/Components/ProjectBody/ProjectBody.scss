@@ -4,12 +4,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: $grey;
+  height: calc(100vh - 122.4px);
 
   .carousel {
     width: 100%;
     margin: 50px 0;
-    @media screen and (max-width: 1040px) {
-      //width: 500px;
-    }
   }
 }
