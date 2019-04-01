@@ -15,6 +15,7 @@
 
 
   .light-square {
+    border: 1.5px solid $darkgrey;
     background-color: $grey;
     display: flex;
     width: 100%;
@@ -23,9 +24,12 @@
     align-items: center;
     &.top {
       border-radius: 10px 10px 0 0;
+      border-bottom: none;
     }
     &.bottom {
       border-radius: 0 0 10px 10px;
+      border-top: none;
+      padding: 5px 0;
     }
     .title {
       color: $darkgrey;
@@ -46,7 +50,7 @@
   .dark-square {
     background-color: $bluegrey;
     height: 0;
-    width: 100%;
+    width: calc(100% + 1.5px);
     color: $darkgrey;
     display: flex;
     justify-content: center;

@@ -9,17 +9,17 @@ class ProjectHeader extends Component {
         return (
             <div className="project-header">
 
-                <img className={"logo"} src={logo} alt={"Philippine Cluniat"}/>
+                {/*<img className={"logo"} src={logo} alt={"Philippine Cluniat"}/>*/}
 
                 <div className={"title"}>
                     PROJETS
                 </div>
 
-                <div className={"icons"}>
-                    <i className={"icon icon-world"}/>
-                    <i className={"icon icon-tennis-raquet-and-ball"}/>
-                    <i className={"icon icon-books-stack-of-three"}/>
-                </div>
+                {/*<div className={"icons"}>*/}
+                    {/*<i className={"icon icon-world"}/>*/}
+                    {/*<i className={"icon icon-tennis-raquet-and-ball"}/>*/}
+                    {/*<i className={"icon icon-books-stack-of-three"}/>*/}
+                {/*</div>*/}
 
 
             </div>
