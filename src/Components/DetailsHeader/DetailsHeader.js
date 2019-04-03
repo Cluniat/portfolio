@@ -20,10 +20,10 @@ class DetailsHeader extends Component {
 
 }
 
-Tab.propTypes = {
+DetailsHeader.propTypes = {
     title: PropTypes.string,
 };
-Tab.defaultProps = {
+DetailsHeader.defaultProps = {
     title: '',
 };
 

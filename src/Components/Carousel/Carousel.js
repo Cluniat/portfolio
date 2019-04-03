@@ -44,7 +44,7 @@ class Carousel extends React.Component {
                 <div>
                     <InfoProject
                         title={"Portfolio"}
-                        description={"Site web portfolio. Développé en ReactJS et Laravel, entièrement administrable. Hébergé sur Raspberry PI"}
+                        description={"Site web portfolio. Développé en ReactJS et Laravel, entièrement administrable."}
                         technos={"ReactJS Laravel Redux Git"}
                         collapse={this.state.nextSlide !== 1}
                         link={"https://github.com/Cluniat/portfolio"}/>
@@ -64,6 +64,13 @@ class Carousel extends React.Component {
                         technos={"java theorie des graphes"}
                         collapse={this.state.nextSlide !== 3}
                         link={"https://github.com/Cluniat/GraphColo"}/>
+                </div>
+                <div>
+                    <InfoProject
+                        title={"Serveur"}
+                        description={"Création d'un serveur pour héberger un site web depuis un raspberry PI"}
+                        technos={"Raspbian"}
+                        collapse={this.state.nextSlide !== 4}/>
                 </div>
             </Slider>
         }
@@ -149,7 +156,7 @@ class Carousel extends React.Component {
                     }
                 },
                 {
-                    breakpoint: 1005,
+                    breakpoint: 1020,
                     settings: {
                         centerMode: false,
                         slidesToShow: 1,
