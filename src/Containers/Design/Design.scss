@@ -1,0 +1,33 @@
+@import "../../Assets/colors";
+
+.design-page {
+  background-color: $grey;
+  padding: 10px;
+  height: 100vh;
+}
+
+.design-btn {
+  background-color: transparent;
+  border: none;
+  font-family: 'Open Sans Condensed', sans-serif;
+  color: $darkgrey;
+  font-size: 35px;
+  margin-right: 15px;
+  cursor: pointer;
+  outline: none !important;
+  &:focus {
+    border-bottom: solid 5px $pink;
+  }
+  &:active {
+    border-bottom: solid 5px $pink;
+  }
+  &:hover {
+    border-bottom: solid 5px $pink;
+  }
+}
+
+.btns {
+  position: absolute;
+  right: 20px;
+  top: 70px;
+}

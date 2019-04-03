@@ -1,0 +1,10 @@
+@import "../../Assets/colors";
+
+
+.project-header {
+  background-color: $grey;
+  .title {
+    font-size: 90px;
+    color: $pink;
+  }
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import ProjectHeader from '../../Components/ProjectHeader/ProjectHeader'
-import ProjectBody from "../../Components/ProjectBody/ProjectBody";
+import DetailsHeader from '../../Components/DetailsHeader/DetailsHeader'
+import DetailsBody from "../../Components/DetailsBody/DetailsBody";
+import "./Project.scss"
 
 
 class Project extends Component {
@@ -9,9 +10,9 @@ class Project extends Component {
 
     render() {
         return (
-            <div>
-                <ProjectHeader/>
-                <ProjectBody/>
+            <div className={"project-page"}>
+                <DetailsHeader title={"Projets"}/>
+                <DetailsBody isProject={true}/>
             </div>
 
         );
