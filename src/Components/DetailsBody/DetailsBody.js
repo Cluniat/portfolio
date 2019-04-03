@@ -9,9 +9,6 @@ class DetailsBody extends Component {
 
 
     render() {
-        console.log("isProject", this.props.isProject)
-        console.log("isLogo", this.props.isLogo)
-        console.log("isPoster", this.props.isPoster)
         return (
             <div className={"project-body"}>
                 <div className={"carousel"}>
