@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import './InfoProject.scss';
 import PropTypes from 'prop-types';
 import Modal from "../Modal/Modal";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-
 
 
 

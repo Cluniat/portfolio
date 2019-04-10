@@ -32,4 +32,14 @@
   justify-content: center;
 }
 
+.design {
+  width: 400px;
+  @media screen and (max-width: 1330px) and (min-width: 1005px) {
+    width: 300px;
+  }
+  @media screen and (max-width: 400px) {
+    width: 300px;
+  }
+}
+
 .slick-slide, .slick-slide *{ outline: none !important; }

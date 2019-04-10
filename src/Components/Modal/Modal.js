@@ -30,6 +30,7 @@ class Modal extends Component {
                 modalClass.push("modal-active");
             }
         }
+        console.log("modal comopnent")
 
         return (
             <div className={modalClass.join(' ')}>
