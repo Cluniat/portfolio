@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import './DesignContent.scss';
-import polytech_2018 from "../../Assets/designs/polytech_2018.png";
-import mimi from "../../Assets/designs/black_mimi.png";
-import irhumman from "../../Assets/designs/IRhumMan.png";
+import polytech_2018 from "../../Assets/designs/logo-polytech.jpg";
+import mimi from "../../Assets/designs/logo-mimi.png";
+import irhumman from "../../Assets/designs/logo-irhumman.png";
 import logo_gone from "../../Assets/designs/logo-gone.png";
-import logo_bal from "../../Assets/designs/ecocup_bal.png";
-import hogwec from "../../Assets/designs/hogwec_black.png";
+import logo_bal from "../../Assets/designs/logo-bal.png";
+import hogwec from "../../Assets/designs/logo-hogwec.png";
 
 
 class DesignContent extends Component {

@@ -3,23 +3,24 @@ import Slider from "react-slick";
 import "./Carousel.scss";
 import InfoProject from "../InfoProject/InfoProject";
 import PropTypes from "prop-types";
-import polytech_2018 from "../../Assets/designs/polytech_2018.png"
-import bal from "../../Assets/designs/[petite]Bal.jpg"
-import gala from "../../Assets/designs/affiche-gala.png"
-import gone from "../../Assets/designs/affiche-gone.png"
-import mimi from "../../Assets/designs/black_mimi.png"
-import telethon from "../../Assets/designs/captain-telethon.png"
-import logo_bal from "../../Assets/designs/ecocup_bal.png"
-import sauciflard from "../../Assets/designs/ecusson-sauciflard_colors.png"
-import gmd from "../../Assets/designs/griffe mon dos_Colors.png"
-import halloween from "../../Assets/designs/halloween-affiche.png"
-import hogwec from "../../Assets/designs/hogwec_black.png"
-import irhumman from "../../Assets/designs/IRhumMan.png"
+import polytech_2018 from "../../Assets/designs/logo-polytech.jpg"
+import bal from "../../Assets/designs/affiche-bal.jpg"
+import gala from "../../Assets/designs/affiche-gala.jpg"
+import gone from "../../Assets/designs/affiche-gone.jpg"
+import mimi from "../../Assets/designs/logo-mimi.png"
+import telethon from "../../Assets/designs/affiche-telethon.jpg"
+import logo_bal from "../../Assets/designs/logo-bal.png"
+import sauciflard from "../../Assets/designs/logo-saucifflard.png"
+import gmd from "../../Assets/designs/logo-gmd.png"
+import halloween from "../../Assets/designs/affiche-halloween.jpg"
+import hogwec from "../../Assets/designs/logo-hogwec.png"
+import irhumman from "../../Assets/designs/logo-irhumman.png"
 import logo_gone from "../../Assets/designs/logo-gone.png"
-import pds from "../../Assets/designs/plusDeSouffle.png"
-import slc from "../../Assets/designs/sers l'cocktail_colors.png"
-import paques from "../../Assets/designs/soiree_paques(2).png"
-import tigresse from "../../Assets/designs/Sticker-tigresse.png"
+import pds from "../../Assets/designs/logo-pds.png"
+import slc from "../../Assets/designs/logo-slc.png"
+import paques from "../../Assets/designs/affiche-paques.jpg"
+import tigresse from "../../Assets/designs/logo-tigresse.jpg"
+import mtm from "../../Assets/designs/logo-mtm.png"
 
 class Carousel extends React.Component {
 
@@ -96,6 +97,9 @@ class Carousel extends React.Component {
                 </div>
                 <div>
                     <img className={"design"} src={hogwec} alt={"hogwec"}/>
+                </div>
+                <div>
+                    <img className={"design"} src={mtm} alt={"mtm"}/>
                 </div>
                 <div>
                     <img className={"design"} src={irhumman} alt={"irhumman"}/>
