@@ -3,6 +3,7 @@ import DetailsHeader from "../../Components/DetailsHeader/DetailsHeader";
 import DetailsBody from "../../Components/DetailsBody/DetailsBody";
 import "./Design.scss"
 import * as ReactDOM from "react-dom";
+import BackButton from "../../Components/BackButton/BackButton";
 
 
 class Design extends Component {
@@ -27,6 +28,7 @@ class Design extends Component {
 
 
     render() {
+
         let logoBtnClass = ["design-btn"];
         let posterBtnClass = ["design-btn"];
         if(this.state.isLogo){

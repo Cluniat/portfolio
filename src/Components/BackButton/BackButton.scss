@@ -1,0 +1,9 @@
+@import "../../Assets/colors.scss";
+
+.back-arrow {
+  color: $pink;
+  font-size: 40px;
+  &:hover {
+    color: $darkgrey;
+  }
+}

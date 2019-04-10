@@ -1,10 +1,13 @@
 @import "../../Assets/colors";
 
 
-.project-header {
+.details-header {
   background-color: $grey;
+  display: flex;
+  align-items: flex-start;
   .title {
     font-size: 90px;
     color: $pink;
+    margin-left: 20px;
   }
 }
