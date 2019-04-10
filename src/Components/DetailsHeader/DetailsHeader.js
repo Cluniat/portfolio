@@ -2,14 +2,15 @@ import React, { Component } from 'react';
 import './DetailsHeader.scss';
 import PropTypes from "prop-types";
 import Tab from "../Tab/Tab";
+import BackButton from "../BackButton/BackButton";
 
 
 class DetailsHeader extends Component {
 
     render() {
         return (
-            <div className="project-header">
-
+            <div className="details-header">
+                <BackButton/>
                 <div className={"title"}>
                     {this.props.title.toUpperCase()}
                 </div>

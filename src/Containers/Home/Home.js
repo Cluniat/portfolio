@@ -15,7 +15,6 @@ import DesignContent from "../../Components/DesignContent/DesignContent";
 class Home extends Component {
 
     render() {
-        library.add(faMapMarkerAlt, faPhone, faEnvelope, faGithub, faLinkedin, faEllipsisH);
         return (
             <div>
                 <Header/>

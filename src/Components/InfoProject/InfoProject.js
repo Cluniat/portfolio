@@ -2,6 +2,9 @@ import React, { Component } from 'react';
 import './InfoProject.scss';
 import PropTypes from 'prop-types';
 import Modal from "../Modal/Modal";
+import {library} from "@fortawesome/fontawesome-svg-core";
+import {faGithub} from "@fortawesome/free-brands-svg-icons";
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
 
@@ -44,12 +47,11 @@ class InfoProject extends Component {
     }
 
     render() {
+        library.add(faGithub);
         return (
             <div className={"info-project"}>
                 <div className={"light-square top"}>
-                    <a href={this.props.link} target={"_blank"} rel= {"noopener noreferrer"}>
-                        <div className={"title"}> {this.resizeString(true, false)} </div>
-                    </a>
+                    <div className={"title"}> {this.resizeString(true, false)} </div>
                 </div>
                     {
                         <div className={this.addDescription()}>
@@ -58,6 +60,9 @@ class InfoProject extends Component {
                     }
                 <div className={"light-square bottom"}>
                     <div className={"technos"}>{this.resizeString(false, true)}</div>
+                    <a href={this.props.link} className={"git-link"} target={"_blank"} rel= {"noopener noreferrer"}>
+                        <FontAwesomeIcon icon={faGithub}/> See on GitHub
+                    </a>
                 </div>
             </div>
         );

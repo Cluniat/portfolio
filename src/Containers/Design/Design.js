@@ -3,6 +3,7 @@ import DetailsHeader from "../../Components/DetailsHeader/DetailsHeader";
 import DetailsBody from "../../Components/DetailsBody/DetailsBody";
 import "./Design.scss"
 import * as ReactDOM from "react-dom";
+import BackButton from "../../Components/BackButton/BackButton";
 
 
 class Design extends Component {
@@ -22,19 +23,31 @@ class Design extends Component {
     }
 
     componentDidMount() {
-        ReactDOM.findDOMNode(this.refs.logo).focus()
+        ReactDOM.findDOMNode(this.refs.logo).focus();
     }
+
 
     render() {
 
-        return (
+        let logoBtnClass = ["design-btn"];
+        let posterBtnClass = ["design-btn"];
+        if(this.state.isLogo){
+            logoBtnClass.push("clicked");
+            posterBtnClass = ["design-btn"];
+        }
+        else {
+            posterBtnClass.push("clicked");
+            logoBtnClass = ["design-btn"];
+        }
+
+            return (
             <div className={"design-page"}>
                 <DetailsHeader title={"design"}/>
                 <div className={"btns"}>
-                    <button className={"design-btn"} ref={"logo"} onClick={() => this.setState({isLogo: true})}>
+                    <button className={logoBtnClass.join(' ')} ref={"logo"} onClick={() => this.setState({isLogo: true})}>
                         Logos
                     </button>
-                    <button className={"design-btn"} onClick={() => this.setState({isLogo: false})}>
+                    <button className={posterBtnClass.join(' ')} onClick={() => this.setState({isLogo: false})}>
                         Affiches
                     </button>
                 </div>

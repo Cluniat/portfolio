@@ -15,10 +15,7 @@
   margin-right: 15px;
   cursor: pointer;
   outline: none !important;
-  &:focus {
-    border-bottom: solid 5px $pink;
-  }
-  &:active {
+  &.clicked {
     border-bottom: solid 5px $pink;
   }
   &:hover {
