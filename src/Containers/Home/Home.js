@@ -5,8 +5,8 @@ import FormationContent from "../../Components/FormationContent/FormationContent
 import ProjetContent from "../../Components/ProjetContent/ProjetContent";
 import Tab from "../../Components/Tab/Tab";
 import {library} from '@fortawesome/fontawesome-svg-core';
-import {faGithub, faLinkedin} from '@fortawesome/free-brands-svg-icons';
-import {faEllipsisH, faEnvelope, faMapMarkerAlt, faPhone} from '@fortawesome/free-solid-svg-icons';
+import {fab} from '@fortawesome/free-brands-svg-icons';
+import {fas} from '@fortawesome/free-solid-svg-icons';
 import CompetenceContent from "../../Components/CompetenceContent/CompetenceContent";
 import ExperienceContent from "../../Components/ExperienceContent/ExperienceContent";
 import {Link} from "react-router-dom";
@@ -15,6 +15,7 @@ import DesignContent from "../../Components/DesignContent/DesignContent";
 class Home extends Component {
 
     render() {
+        library.add(fas, fab)
         return (
             <div>
                 <Header/>
