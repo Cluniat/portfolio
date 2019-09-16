@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="shortcut icon" href="favicon.ico" />
     <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
     <meta
       name="viewport"
@@ -13,7 +13,7 @@
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="manifest.json" />
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
@@ -40,12 +40,25 @@
     -->
 
     <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="/__/firebase/6.6.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
 
     <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#reserved-urls -->
+         https://firebase.google.com/docs/web/setup#config-web-app -->
 
-    <!-- Initialize Firebase -->
-    <script src="/__/firebase/init.js"></script>
+    <script>
+      // Your web app's Firebase configuration
+      var firebaseConfig = {
+        apiKey: "AIzaSyAaoM72v3vLZg-NtRCHdbXnHjF4YYlTXO8",
+        authDomain: "philippine-cluniat.firebaseapp.com",
+        databaseURL: "https://philippine-cluniat.firebaseio.com",
+        projectId: "philippine-cluniat",
+        storageBucket: "",
+        messagingSenderId: "562789872348",
+        appId: "1:562789872348:web:6bf68189ab672af9ab7a19"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+    </script>
   </body>
 </html>
