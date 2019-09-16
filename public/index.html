@@ -47,8 +47,8 @@
 
     <script>
       // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyAaoM72v3vLZg-NtRCHdbXnHjF4YYlTXO8",
+      const firebaseConfig = {
+        apiKey: "%REACT_APP_FIREBASE_KEY%",
         authDomain: "philippine-cluniat.firebaseapp.com",
         databaseURL: "https://philippine-cluniat.firebaseio.com",
         projectId: "philippine-cluniat",
@@ -58,7 +58,6 @@
       };
       // Initialize Firebase
       firebase.initializeApp(firebaseConfig);
-      firebase.analytics();
     </script>
   </body>
 </html>
