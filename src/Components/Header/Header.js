@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './Header.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from "../../Assets/images/philippine-cluniat.png";
+import photo from "../../Assets/images/photo-philippine-cluniat.jpg";
 
 
 class Header extends Component {
@@ -11,7 +12,10 @@ class Header extends Component {
             <div className="header">
 
                 <div className={"identity"}>
-                    <div className={"photo"}>Ceci est une photo</div>
+                    <div className={"photo-cover"}>
+                        <div className={"photo-border"}></div>
+                        <img className={"photo"} src={photo} alt={"Philippine Cluniat"}/>
+                    </div>
                 </div>
 
                 <div className={"info"}>
