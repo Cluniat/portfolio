@@ -9,10 +9,10 @@ class ModalFormation extends Component {
         return (
             <div className={"modal-formation"}>
                 <div className={"formation"}>
-                    <div className={"year"}>2018 / 2019</div>
+                    <div className={"year"}>2019 / 2020</div>
                     <div className={"pipe"}/>
                     <div className={"details"}>
-                        <div className={"description"}>4<sup>ème</sup> année d'école d'ingénieur, spécialité informatique</div>
+                        <div className={"description"}>5<sup>ème</sup> année d'école d'ingénieur, spécialité informatique</div>
                         <div className={"place"}>
                             <FontAwesomeIcon className={"font-awesome"} icon="map-marker-alt"/>
                             <div className={"place-name"}>Polytech Lyon</div>
@@ -20,10 +20,10 @@ class ModalFormation extends Component {
                     </div>
                 </div>
                 <div className={"formation"}>
-                    <div className={"year"}>2017 / 2018</div>
+                    <div className={"year"}>2017 / 2019</div>
                     <div className={"pipe"}/>
                     <div className={"details"}>
-                        <div className={"description"}>3<sup>ème</sup> année d'école d'ingénieur, spécialité informatique</div>
+                        <div className={"description"}>3<sup>ème</sup> et 4<sup>ème</sup> année d'école d'ingénieur, spécialité informatique</div>
                         <div className={"place"}>
                             <FontAwesomeIcon className={"font-awesome"} icon="map-marker-alt"/>
                             <div className={"place-name"}>Polytech Lyon</div>
