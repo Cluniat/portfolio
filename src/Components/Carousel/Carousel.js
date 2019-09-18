@@ -45,8 +45,8 @@ class Carousel extends React.Component {
                 <div>
                     <InfoProject
                         title={"Portfolio"}
-                        description={"Site web portfolio. Développé en ReactJS et Laravel, entièrement administrable."}
-                        technos={"ReactJS Laravel Redux Git"}
+                        description={"Site web portfolio. Développé en ReactJS, dynamique et administrable. Hébergé sur Firebase"}
+                        technos={"ReactJS Firebase Redux Git"}
                         collapse={this.state.nextSlide !== 1}
                         link={"https://github.com/Cluniat/portfolio"}/>
                 </div>
@@ -68,10 +68,11 @@ class Carousel extends React.Component {
                 </div>
                 <div>
                     <InfoProject
-                        title={"Serveur"}
-                        description={"Création d'un serveur pour héberger un site web depuis un raspberry PI"}
-                        technos={"Raspbian"}
-                        collapse={this.state.nextSlide !== 4}/>
+                        title={"PolyAuto"}
+                        description={"Application Angular permettant de louer des voitures interrogeant une API springBoot."}
+                        technos={"Angular7 SpringBoot"}
+                        collapse={this.state.nextSlide !== 4}
+                        link={"https://github.com/polydreamteam/polyauto"}/>
                 </div>
             </Slider>
         }
