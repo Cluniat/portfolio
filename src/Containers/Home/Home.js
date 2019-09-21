@@ -9,13 +9,20 @@ import {fab} from '@fortawesome/free-brands-svg-icons';
 import {fas} from '@fortawesome/free-solid-svg-icons';
 import CompetenceContent from "../../Components/CompetenceContent/CompetenceContent";
 import ExperienceContent from "../../Components/ExperienceContent/ExperienceContent";
-import {Link} from "react-router-dom";
+import {Link, withRouter} from "react-router-dom";
 import DesignContent from "../../Components/DesignContent/DesignContent";
+
+import EducationActions from '../../Store/Education/actions';
+import {connect} from "react-redux";
 
 class Home extends Component {
 
+    componentDidMount() {
+        this.props.getLastEducation()
+    }
+
     render() {
-        library.add(fas, fab)
+        library.add(fas, fab);
         return (
             <div>
                 <Header/>
@@ -43,4 +50,11 @@ class Home extends Component {
     }
 }
 
-export default Home;
+const mapDispatchToProps = dispatch => ({
+    getLastEducation: () => dispatch(EducationActions.lastEducation())
+})
+
+export default withRouter(connect(
+    null,
+    mapDispatchToProps
+)(Home));

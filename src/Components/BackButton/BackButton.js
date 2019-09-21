@@ -3,7 +3,6 @@ import "./BackButton.scss"
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import Tab from "../../Containers/Home/Home";
 import {Link} from "react-router-dom";
 
 
