@@ -1,9 +1,9 @@
 import {createActions} from "reduxsauce";
 
 const { Types, Creators } = createActions( {
-    getEducations: null,
-    getEducationsSuccess: ['educations'],
-    getEducationsFailure: ['error'],
+    allEducations: null,
+    allEducationsSuccess: ['educations'],
+    allEducationsFailure: ['error'],
 
     lastEducation: null,
     lastEducationSuccess: ['lastEducation'],

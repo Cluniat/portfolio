@@ -2,6 +2,7 @@ import {db} from "../firebase";
 
 export function getAllEducations() {
     return db.collection("education")
+        .orderBy("end", "desc")
         .get()
 }
 
