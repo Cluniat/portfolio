@@ -2,9 +2,20 @@ import React, { Component } from 'react';
 import './FormationContent.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { connect } from 'react-redux';
+import {Utils} from '../../Utils'
 
 
 class FormationContent extends Component {
+
+    _renderDescription(content) {
+        const sup = 'ème';
+        let split = content.split(sup)
+        return (
+            <div className={"description"}>
+                {split[0]}<sup>{sup}</sup> {split[1]}
+            </div>
+        )
+    }
 
     render() {
         return (
@@ -14,10 +25,10 @@ class FormationContent extends Component {
                         <div className={"year"}>{this.props.lastEducation.data.start} / {this.props.lastEducation.data.end}</div>
                         <div className={"pipe"}/>
                         <div className={"details"}>
-                            <div className={"description"}>{this.props.lastEducation.data.description}</div>
+                            {this._renderDescription(this.props.lastEducation.data.description)}
                             <div className={"place"}>
                                 <FontAwesomeIcon className={"font-awesome"} icon="map-marker-alt"/>
-                                <div className={"place-name"}>{this.props.lastEducation.data.place}</div>
+                                <div className={"place-name"}>{Utils.capitalizeSentence(this.props.lastEducation.data.place)}</div>
                             </div>
                         </div>
                     </div>
