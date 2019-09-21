@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import './DetailsHeader.scss';
 import PropTypes from "prop-types";
-import Tab from "../Tab/Tab";
 import BackButton from "../BackButton/BackButton";
 
 
