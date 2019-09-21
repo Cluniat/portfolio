@@ -12,3 +12,13 @@ export function* getLastEducation() {
         yield put (EducationActions.lastEducationFailure('error'));
     }
 }
+export function* getAllEducations() {
+    let response = yield call(EducationService.getAllEducations)
+    response = response.docs.map(doc => doc.data());
+    if(response) {
+        yield put (EducationActions.allEducationsSuccess(response));
+    }
+    else {
+        yield put (EducationActions.allEducationsFailure('error'));
+    }
+}

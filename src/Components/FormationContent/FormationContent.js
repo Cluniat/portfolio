@@ -9,12 +9,20 @@ class FormationContent extends Component {
 
     _renderDescription(content) {
         const sup = 'ème';
-        let split = content.split(sup)
-        return (
-            <div className={"description"}>
-                {split[0]}<sup>{sup}</sup> {split[1]}
-            </div>
-        )
+        if(content.includes(sup)){
+            let split = content.split(sup)
+            return (
+                <div className={"description"}>
+                    {
+                        split.map((item, index, tab) => (
+                            <span key={index}>
+                                {index !== tab.length - 1 ? (<span>{item}<sup>éme</sup></span>) : <span>{item}</span> }
+                            </span>
+                        ))
+                    }
+                </div>
+            )
+        }
     }
 
     render() {
