@@ -2,13 +2,13 @@ import {db} from "../firebase";
 
 export function getAllExperiences() {
     return db.collection("experience")
-        .orderBy("end", "desc")
+        .orderBy("start", "desc")
         .get()
 }
 
 export function getLastExperience() {
     return  db.collection("experience")
-        .orderBy("end", "desc")
+         .orderBy("start", "desc")
         .limit(1)
         .get()
 }
