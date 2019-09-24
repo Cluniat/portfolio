@@ -13,12 +13,14 @@ import {Link, withRouter} from "react-router-dom";
 import DesignContent from "../../Components/DesignContent/DesignContent";
 
 import EducationActions from '../../Store/Education/actions';
+import ExperienceActions from '../../Store/Experience/actions';
 import {connect} from "react-redux";
 
 class Home extends Component {
 
     componentDidMount() {
         this.props.getLastEducation()
+        this.props.getLastExperience()
     }
 
     render() {
@@ -51,7 +53,8 @@ class Home extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    getLastEducation: () => dispatch(EducationActions.lastEducation())
+    getLastEducation: () => dispatch(EducationActions.lastEducation()),
+    getLastExperience: () => dispatch(ExperienceActions.lastExperience())
 })
 
 export default withRouter(connect(

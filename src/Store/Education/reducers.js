@@ -51,7 +51,7 @@ export const allEducationsSuccess = (state, {educations}) =>
 
 export const allEducationsFailure = (state, {error}) => ({
     ...state,
-    lastEducation: {
+    educations: {
         data: null,
         loading: false,
         error: error
