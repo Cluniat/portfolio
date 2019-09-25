@@ -7,7 +7,7 @@ export function getAllProjects() {
 
 export function getLastProject() {
     return  db.collection("projects")
-        .where('name', '==', 'portfolio')
+        .where('name', '==', 'Portfolio')
         .get()
 }
 

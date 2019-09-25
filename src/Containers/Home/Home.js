@@ -14,6 +14,7 @@ import DesignContent from "../../Components/DesignContent/DesignContent";
 
 import EducationActions from '../../Store/Education/actions';
 import ExperienceActions from '../../Store/Experience/actions';
+import ProjectActions from '../../Store/Project/actions';
 import {connect} from "react-redux";
 
 class Home extends Component {
@@ -21,6 +22,7 @@ class Home extends Component {
     componentDidMount() {
         this.props.getLastEducation()
         this.props.getLastExperience()
+        this.props.getLastProject()
     }
 
     render() {
@@ -54,7 +56,8 @@ class Home extends Component {
 
 const mapDispatchToProps = dispatch => ({
     getLastEducation: () => dispatch(EducationActions.lastEducation()),
-    getLastExperience: () => dispatch(ExperienceActions.lastExperience())
+    getLastExperience: () => dispatch(ExperienceActions.lastExperience()),
+    getLastProject: () => dispatch(ProjectActions.lastProject()),
 })
 
 export default withRouter(connect(
