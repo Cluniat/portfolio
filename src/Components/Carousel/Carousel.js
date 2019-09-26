@@ -3,6 +3,8 @@ import Slider from "react-slick";
 import "./Carousel.scss";
 import InfoProject from "../InfoProject/InfoProject";
 import PropTypes from "prop-types";
+import {connect} from "react-redux";
+
 import polytech_2018 from "../../Assets/designs/logo-polytech.jpg"
 import bal from "../../Assets/designs/affiche-bal.jpg"
 import gala from "../../Assets/designs/affiche-gala.jpg"
@@ -21,8 +23,14 @@ import slc from "../../Assets/designs/logo-slc.png"
 import paques from "../../Assets/designs/affiche-paques.jpg"
 import tigresse from "../../Assets/designs/logo-tigresse.jpg"
 import mtm from "../../Assets/designs/logo-mtm.png"
+import ProjectActions from "../../Store/Project/actions";
+import {withRouter} from "react-router-dom";
 
 class Carousel extends React.Component {
+
+    componentDidMount() {
+        this.props.getAllProjects()
+    }
 
     constructor(props) {
         super(props);
@@ -30,50 +38,20 @@ class Carousel extends React.Component {
     }
 
     toDisplay() {
-        if(this.props.isProject) {
-            return  <Slider {...this.state.settings}>
-                <div>
-                    <InfoProject
-                        title={"Video Game"}
-                        description={"Site web permettant l'affichage et la recherche de jeux vidéos depuis une API. Développé en VueJS 2 (visuels, gestion de projet)"}
-                        technos={"VueJS Axios VueX Git Trello"}
-                        collapse={this.state.nextSlide !== 0}
-                        link={"https://github.com/Cluniat/VideoGame"}
-                    />
+        if(this.props.isProject && this.props.projects && !this.props.projects.loading) {
+            return<Slider {...this.state.settings}>
+                { this.props.projects.data.map((project, index) => (
+                    <div key={`project-${index}`}>
+                        <InfoProject
+                            title={project.name}
+                            description={project.description}
+                            technos={project.technos.toString()}
+                            collapse={this.state.nextSlide !== index}
+                            link={project.link}
+                        />
+                    </div>
+                ))}
 
-                </div>
-                <div>
-                    <InfoProject
-                        title={"Portfolio"}
-                        description={"Site web portfolio. Développé en ReactJS, dynamique et administrable. Hébergé sur Firebase"}
-                        technos={"ReactJS Firebase Redux Git"}
-                        collapse={this.state.nextSlide !== 1}
-                        link={"https://github.com/Cluniat/portfolio"}/>
-                </div>
-                <div>
-                    <InfoProject
-                        title={"Projet Web"}
-                        description={"Création d'un site e-commerce sous le framework Laravel. Création d'une architecture SASS pour les feuilles de style"}
-                        technos={"laravel sass php blade git"}
-                        collapse={this.state.nextSlide !== 2}
-                        link={"https://github.com/Cluniat/Laravel-SASS"}/>
-                </div>
-                <div>
-                    <InfoProject
-                        title={"Graphes"}
-                        description={"Implémentation, optimisation et comparaison d'algorithmes de coloration de graphes"}
-                        technos={"java theorie des graphes"}
-                        collapse={this.state.nextSlide !== 3}
-                        link={"https://github.com/Cluniat/GraphColo"}/>
-                </div>
-                <div>
-                    <InfoProject
-                        title={"PolyAuto"}
-                        description={"Application Angular permettant de louer des voitures interrogeant une API springBoot."}
-                        technos={"Angular7 SpringBoot"}
-                        collapse={this.state.nextSlide !== 4}
-                        link={"https://github.com/polydreamteam/polyauto"}/>
-                </div>
             </Slider>
         }
         else if (this.props.isLogo) {
@@ -197,4 +175,15 @@ Carousel.defaultProps = {
 
 }
 
-export default Carousel;
+const mapStateToProps = state => ({
+    projects: state.projects.projects,
+});
+
+const mapDispatchToProps = dispatch => ({
+    getAllProjects: () => dispatch(ProjectActions.allProjects())
+})
+
+export default withRouter(connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Carousel));

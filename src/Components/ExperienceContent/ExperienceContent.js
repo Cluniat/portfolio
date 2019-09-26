@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './ExperienceContent.scss';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { connect } from 'react-redux';
-import {Utils} from '../../Utils'
+import {Utils} from '../../Utils';
 
 
 class ExperienceContent extends Component {
