@@ -28,11 +28,12 @@ class InfoProject extends Component {
             }
         }
         else if(technos) {
-            if(this.props.technos.length > 27) {
-                return this.props.technos.substr(0, 27).toUpperCase();
+            const strTechnos = this.props.technos.replace(/,/g, ' ')
+            if(strTechnos.length > 27) {
+                return strTechnos.substr(0, 27).toUpperCase();
             }
             else {
-                return this.props.technos.toUpperCase();
+                return strTechnos.toUpperCase();
             }
         }
         else {
