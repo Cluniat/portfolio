@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './Header.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logo from "../../Assets/images/philippine-cluniat.png";
-import photo from "../../Assets/images/photo-philippine-cluniat.jpg";
+import photo from "../../Assets/images/PHIPHI.png";
 
 
 class Header extends Component {
