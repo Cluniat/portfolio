@@ -1,23 +1,22 @@
-import React from 'react';
-import './DetailsHeader.scss';
-import PropTypes from "prop-types";
-import BackButton from "../BackButton/BackButton";
+import React from 'react'
+import './DetailsHeader.scss'
+import PropTypes from 'prop-types'
+import BackButton from '../BackButton/BackButton'
 
-
-const DetailsHeader = ({title}) => (
+const DetailsHeader = ({ title }) => (
     <div className="details-header">
         <BackButton/>
-        <div className={"title"}>
+        <div className={'title'}>
             {title.toUpperCase()}
         </div>
     </div>
 )
 
 DetailsHeader.propTypes = {
-    title: PropTypes.string,
-};
+  title: PropTypes.string,
+}
 DetailsHeader.defaultProps = {
-    title: '',
-};
+  title: '',
+}
 
-export default DetailsHeader;
+export default DetailsHeader
