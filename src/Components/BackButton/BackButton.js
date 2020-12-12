@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import "./BackButton.scss"
 import {library} from '@fortawesome/fontawesome-svg-core';
 import {faArrowLeft} from '@fortawesome/free-solid-svg-icons';
@@ -6,22 +6,14 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import {Link} from "react-router-dom";
 
 
-class BackButton extends Component {
+const BackButton = () => {
+    library.add(faArrowLeft);
 
-    constructor(props) {
-        super(props);
-        this.state = {isLogo: true};
-    }
-
-
-    render() {
-        library.add(faArrowLeft);
-        return (
-            <Link to={"/"} className={"back-arrow"}>
-                <FontAwesomeIcon icon={faArrowLeft} />
-            </Link>
-        );
-    }
+    return (
+        <Link to={"/"} className={"back-arrow"}>
+            <FontAwesomeIcon icon={faArrowLeft} />
+        </Link>
+    )
 }
 
 export default BackButton;
