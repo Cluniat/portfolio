@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './InfoProject.scss';
 import PropTypes from 'prop-types';
 import Modal from "../Modal/Modal";
@@ -8,27 +8,29 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 
 
-class InfoProject extends Component {
+const InfoProject = ({collapse, title, technos, description, link}) => {
 
-    addDescription() {
-        if(this.props.collapse) {
+    library.add(faGithub);
+
+    const addDescription = () => {
+        if(collapse) {
             return "dark-square";
         } else {
             return "dark-square show";
         }
     }
 
-    resizeString(title, technos) {
+    const resizeString = () => {
         if(title) {
-            if(this.props.title.length > 11) {
-                return this.props.title.substr(0, 10);
+            if(title.length > 11) {
+                return title.substr(0, 10);
             }
             else {
-                return this.props.title;
+                return title;
             }
         }
         else if(technos) {
-            const strTechnos = this.props.technos.replace(/,/g, ' ')
+            const strTechnos = technos.replace(/,/g, ' ')
             if(strTechnos.length > 27) {
                 return strTechnos.substr(0, 27).toUpperCase();
             }
@@ -37,37 +39,33 @@ class InfoProject extends Component {
             }
         }
         else {
-            if(this.props.description.length > 130) {
-                return this.props.description.substr(0, 130);
+            if(description.length > 130) {
+                return description.substr(0, 130);
             }
             else {
-                return this.props.description;
+                return description;
             }
         }
 
     }
-
-    render() {
-        library.add(faGithub);
-        return (
-            <div className={"info-project"}>
-                <div className={"light-square top"}>
-                    <div className={"title"}> {this.resizeString(true, false)} </div>
-                </div>
-                    {
-                        <div className={this.addDescription()}>
-                            <div className={"description"}> {this.resizeString(false, false)} </div>
-                        </div>
-                    }
-                <div className={"light-square bottom"}>
-                    <div className={"technos"}>{this.resizeString(false, true)}</div>
-                    <a href={this.props.link} className={"git-link"} target={"_blank"} rel= {"noopener noreferrer"}>
-                        <FontAwesomeIcon icon={faGithub}/> See on GitHub
-                    </a>
-                </div>
+    return (
+        <div className={"info-project"}>
+            <div className={"light-square top"}>
+                <div className={"title"}> {resizeString(true, false)} </div>
             </div>
-        );
-    }
+                {
+                    <div className={addDescription()}>
+                        <div className={"description"}> {resizeString(false, false)} </div>
+                    </div>
+                }
+            <div className={"light-square bottom"}>
+                <div className={"technos"}>{resizeString(false, true)}</div>
+                <a href={link} className={"git-link"} target={"_blank"} rel= {"noopener noreferrer"}>
+                    <FontAwesomeIcon icon={faGithub}/> See on GitHub
+                </a>
+            </div>
+        </div>
+    );
 }
 
 InfoProject.propTypes = {
