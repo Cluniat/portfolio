@@ -1,7 +1,7 @@
-import React, { Component } from 'react';
+import React  from 'react';
 import './FormationContent.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {connect, useSelector} from 'react-redux';
+import {useSelector} from 'react-redux';
 import {Utils} from '../../Utils'
 
 
