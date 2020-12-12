@@ -6,9 +6,8 @@ import {BrowserRouter} from "react-router-dom";
 import AppRoute from "./AppRoute";
 
 import {Provider} from "react-redux";
-import createStore from "./Store";
 
-const { store } = createStore()
+import { store} from "./Store";
 
 ReactDOM.render(
     <Provider store={store}>

@@ -12,9 +12,9 @@ import ExperienceContent from "../../Components/ExperienceContent/ExperienceCont
 import {Link} from "react-router-dom";
 import DesignContent from "../../Components/DesignContent/DesignContent";
 
-import {EducationTypes} from '../../Store/Education/actions';
-import {ExperienceTypes} from '../../Store/Experience/actions';
-import {ProjectTypes} from '../../Store/Project/actions';
+import {lastProject} from "../../Store/Project/actions";
+import {lastExperience} from "../../Store/Experience/actions";
+import {lastEducation} from "../../Store/Education/actions";
 import {useDispatch} from "react-redux";
 
 
@@ -22,15 +22,15 @@ const Home = () => {
     library.add(fas, fab);
     const dispatch = useDispatch();
     const getLastEducation = useCallback(
-        () => dispatch({type: EducationTypes.LAST_EDUCATION}),
+        () => dispatch(lastEducation()),
         [dispatch]
     )
     const getLastExperience = useCallback(
-        () => dispatch({type: ExperienceTypes.LAST_EXPERIENCE}),
+        () => dispatch(lastExperience()),
         [dispatch]
     )
     const getLastProject = useCallback(
-        () => dispatch({type: ProjectTypes.LAST_PROJECT}),
+        () => dispatch(lastProject()),
         [dispatch]
     )
 
@@ -39,7 +39,6 @@ const Home = () => {
         getLastExperience();
         getLastProject();
     }, [getLastEducation, getLastExperience, getLastProject])
-
 
     return(
         <div>

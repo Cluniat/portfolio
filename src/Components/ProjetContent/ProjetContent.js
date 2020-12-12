@@ -7,7 +7,7 @@ const ProjetContent = () => {
     const lastProject = useSelector(state => state.projects.lastProject);
 
     return (
-        (lastProject && !lastProject.loading) ?
+        (lastProject.data && !lastProject.loading) ?
             <div className={"projet"}>
                 <div className={"name-technos"}>
                     <div className={"project-name"}>{lastProject.data.name}</div>

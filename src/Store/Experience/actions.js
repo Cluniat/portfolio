@@ -1,15 +1,12 @@
-import {createActions} from "reduxsauce";
+import {createAsyncThunk} from "@reduxjs/toolkit";
+import {ExperienceService} from "../../Services/ExperienceService";
 
-const { Types, Creators } = createActions( {
-    allExperiences: null,
-    allExperiencesSuccess: ['experiences'],
-    allExperiencesFailure: ['error'],
-
-    lastExperience: null,
-    lastExperienceSuccess: ['lastExperience'],
-    lastExperienceFailure: ['error'],
+export const allExperiences = createAsyncThunk('Experience/getAllExperiences', async() => {
+    const response = await ExperienceService.getAllExperiences();
+    return response.docs.map(doc => doc.data());
 })
 
-export const ExperienceTypes = Types
-export default Creators
-
+export const lastExperience = createAsyncThunk('Experience/getLastExperience', async() => {
+    const response = await ExperienceService.getAllExperiences();
+    return response.docs.map(doc => doc.data())[0];
+})

@@ -1,7 +1,7 @@
 import React, {useEffect, useCallback} from 'react';
 import './ModalFormation.scss';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {EducationTypes} from "../../Store/Education/actions";
+import {allEducations} from "../../Store/Education/actions";
 import {useDispatch, useSelector} from "react-redux";
 import {Utils} from "../../Utils";
 
@@ -10,7 +10,7 @@ const ModalFormation = () => {
 
     const dispatch = useDispatch();
     const getEducations = useCallback(
-        () => dispatch({type: EducationTypes.ALL_EDUCATIONS}),
+        () => dispatch(allEducations()),
         [dispatch]
     )
     const educations = useSelector(state => state.educations.educations);

@@ -1,8 +1,8 @@
-import {INITIAL_STATE} from './initialState'
-import {createReducer} from "reduxsauce";
-import {ProjectTypes} from "./actions";
+import {INITIAL_STATE} from './initialState';
+import {createSlice} from "@reduxjs/toolkit";
+import {allProjects, lastProject} from "./actions";
 
-export const lastProjectRequest = (state) => ({
+const lastProjectLoading = (state) => ({
     ...state,
     lastProject: {
         data: null,
@@ -11,61 +11,64 @@ export const lastProjectRequest = (state) => ({
     }
 })
 
-export const lastProjectSuccess = (state, {lastProject}) => ({
-    ...state,
-    lastProject: {
-        data: lastProject,
+const lastProjectSuccess = (state, {payload}) => (
+    {
+        ...state,
+        lastProject:
+    {
+        data: payload,
         loading: false,
         error: null
     }
 })
 
-export const lastProjectFailure = (state, {error}) => ({
+const lastProjectFailure = (state, {payload}) => ({
     ...state,
     lastProject: {
         data: null,
         loading: false,
-        error: error
+        error: payload
     }
 })
 
-
-export const allProjectsRequest = (state) => ({
-    ...state,
-    projects: {
-        data: null,
-        loading: true,
-        error: null
-    }
+const allProjectsLoading = (state) => ({
+        ...state,
+        projects: {
+            data: null,
+            loading: true,
+            error: null
+        }
 })
 
-export const allProjectsSuccess = (state, {projects}) =>
+const allProjectsSuccess = (state, {payload}) =>
     ({
     ...state,
         projects: {
-        data: projects,
+        data: payload,
         loading: false,
         error: null
     }
 })
 
-export const allProjectsFailure = (state, {error}) => ({
+const allProjectsFailure = (state, {payload}) => ({
     ...state,
     projects: {
         data: null,
         loading: false,
-        error: error
+        error: payload
     }
 })
 
-export const reducer = createReducer(INITIAL_STATE, {
-    [ProjectTypes.LAST_PROJECT]: lastProjectRequest,
-    [ProjectTypes.LAST_PROJECT_SUCCESS]: lastProjectSuccess,
-    [ProjectTypes.LAST_PROJECT_FAILURE]: lastProjectFailure,
-
-    [ProjectTypes.ALL_PROJECTS]: allProjectsRequest,
-    [ProjectTypes.ALL_PROJECTS_SUCCESS]: allProjectsSuccess,
-    [ProjectTypes.ALL_PROJECTS_FAILURE]: allProjectsFailure,
-})
-
+export const projectReducer = createSlice({
+    name: 'projects',
+    initialState: INITIAL_STATE,
+    extraReducers: {
+        [allProjects.fulfilled]: allProjectsSuccess,
+        [allProjects.rejected]: allProjectsFailure,
+        [allProjects.pending]: allProjectsLoading,
+        [lastProject.fulfilled]: lastProjectSuccess,
+        [lastProject.rejected]: lastProjectFailure,
+        [lastProject.pending]: lastProjectLoading,
+    }
+}).reducer;
 

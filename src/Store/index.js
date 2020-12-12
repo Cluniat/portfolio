@@ -1,18 +1,14 @@
-import {combineReducers} from "redux";
-import configureStore from './createStore'
-import rootSaga from '../Sagas'
+import { configureStore, combineReducers} from "@reduxjs/toolkit";
+import {experienceReducer} from './Experience/reducers';
+import {projectReducer} from './Project/reducers';
+import {educationReducer} from "./Education/reducers";
 
-import {reducer as EducationReducer} from './Education/reducers'
-import {reducer as ExperienceReducer} from './Experience/reducers'
-import {reducer as ProjectReducer} from './Project/reducers'
+const rootReducer = combineReducers({
+    educations: educationReducer,
+    experiences: experienceReducer,
+    projects: projectReducer
 
-export default () => {
-    const rootReducer = combineReducers({
-        educations: EducationReducer,
-        experiences: ExperienceReducer,
-        projects: ProjectReducer
+})
 
-    })
 
-    return configureStore(rootReducer, rootSaga)
-}
+export const store = configureStore({reducer: rootReducer});

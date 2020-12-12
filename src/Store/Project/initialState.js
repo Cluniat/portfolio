@@ -1,6 +1,4 @@
-import {Map} from 'immutable';
-
-export const INITIAL_STATE = Map({
+export const INITIAL_STATE = {
     projects: {
         data: [],
         loading: false,
@@ -12,4 +10,4 @@ export const INITIAL_STATE = Map({
         loading: false,
         error: null
     },
-});
+};

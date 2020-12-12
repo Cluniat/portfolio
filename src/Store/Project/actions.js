@@ -1,15 +1,12 @@
-import {createActions} from "reduxsauce";
+import {createAsyncThunk} from "@reduxjs/toolkit";
+import {ProjectService} from "../../Services/ProjectService";
 
-const { Types, Creators } = createActions( {
-    allProjects: null,
-    allProjectsSuccess: ['projects'],
-    allProjectsFailure: ['error'],
-
-    lastProject: null,
-    lastProjectSuccess: ['lastProject'],
-    lastProjectFailure: ['error'],
+export const allProjects = createAsyncThunk('Project/getAllProjects', async() => {
+    const response = await ProjectService.getAllProjects();
+    return response.docs.map(doc => doc.data());
 })
 
-export const ProjectTypes = Types
-export default Creators
-
+export const lastProject = createAsyncThunk('Project/getLastProject', async() => {
+    const response = await ProjectService.getLastProject();
+    return response.docs.map(doc => doc.data())[0];
+})
