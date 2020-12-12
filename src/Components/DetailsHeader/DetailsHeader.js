@@ -1,24 +1,17 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './DetailsHeader.scss';
 import PropTypes from "prop-types";
 import BackButton from "../BackButton/BackButton";
 
 
-class DetailsHeader extends Component {
-
-    render() {
-        return (
-            <div className="details-header">
-                <BackButton/>
-                <div className={"title"}>
-                    {this.props.title.toUpperCase()}
-                </div>
-
-            </div>
-        );
-    }
-
-}
+const DetailsHeader = ({title}) => (
+    <div className="details-header">
+        <BackButton/>
+        <div className={"title"}>
+            {title.toUpperCase()}
+        </div>
+    </div>
+)
 
 DetailsHeader.propTypes = {
     title: PropTypes.string,

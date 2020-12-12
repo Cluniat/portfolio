@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useCallback, useState, useEffect} from "react";
 import Slider from "react-slick";
 import "./Carousel.scss";
 import InfoProject from "../InfoProject/InfoProject";
 import PropTypes from "prop-types";
-import {connect} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
 import polytech_2018 from "../../Assets/designs/logo-polytech.jpg"
 import bal from "../../Assets/designs/affiche-bal.jpg"
@@ -23,39 +23,82 @@ import slc from "../../Assets/designs/logo-slc.png"
 import paques from "../../Assets/designs/affiche-paques.jpg"
 import tigresse from "../../Assets/designs/logo-tigresse.jpg"
 import mtm from "../../Assets/designs/logo-mtm.png"
-import ProjectActions from "../../Store/Project/actions";
-import {withRouter} from "react-router-dom";
 
-class Carousel extends React.Component {
+import {ProjectTypes} from "../../Store/Project/actions";
 
-    componentDidMount() {
-        this.props.getAllProjects()
+const Carousel= ({isProject, isLogo, isPoster}) => {
+
+    const [nextSlide, setNextSlide] = useState(0);
+
+    const dispatch = useDispatch();
+    const getAllProjects = useCallback(
+        () => dispatch({type: ProjectTypes.ALL_PROJECTS}),
+        [dispatch]
+    );
+    const projects = useSelector(state => state.projects.projects);
+
+    useEffect(() => {
+        if(isProject) {
+            getAllProjects();
+        }
+    }, [])
+
+    const settings = {
+            dots: true,
+            infinite: true,
+            speed: 1000,
+            slidesToShow: 5,
+            slidesToScroll: 1,
+            centerMode: true,
+            focusOnSelect: true,
+            arrows: false,
+            beforeChange: (current, next) => (nextSlide !== next)? setTimeout( () => setNextSlide(next), 10) : null,
+            responsive: [
+                {
+                    breakpoint: 2130,
+                    settings: {
+                        slidesToShow: 3,
+
+                    }
+                },
+                {
+                    breakpoint: 1020,
+                    settings: {
+                        centerMode: false,
+                        slidesToShow: 1,
+                        arrows: true
+                    }
+                },
+                {
+                    breakpoint: 580,
+                    settings: {
+                        centerMode: false,
+                        slidesToShow: 1,
+                        arrows: false
+                    }
+                },
+            ]
     }
 
-    constructor(props) {
-        super(props);
-        this.state = {nextSlide: 0, settings: null};
-    }
-
-    toDisplay() {
-        if(this.props.isProject && this.props.projects && !this.props.projects.loading) {
-            return<Slider {...this.state.settings}>
-                { this.props.projects.data.map((project, index) => (
+    const toDisplay = () => {
+        if(isProject && projects && !projects.loading) {
+            return<Slider {...settings}>
+                { projects.data.map((project, index) => (
                     <div key={`project-${index}`}>
                         <InfoProject
                             title={project.name}
                             description={project.description}
                             technos={project.technos.toString()}
-                            collapse={this.state.nextSlide !== index}
+                            collapse={nextSlide !== index}
                             link={project.link}
                         />
                     </div>
                 ))}
-
             </Slider>
         }
-        else if (this.props.isLogo) {
-            return  <Slider {...this.state.settings}>
+        else if (isLogo) {
+            console.log("SETTINGS", settings)
+            return  <Slider {...settings}>
                 <div>
                     <img className={"design"} src={polytech_2018} alt={"polytech_2018"}/>
                 </div>
@@ -95,7 +138,7 @@ class Carousel extends React.Component {
             </Slider>
         }
         else {
-            return  <Slider {...this.state.settings}>
+            return  <Slider {...settings}>
                 <div>
                     <img className={"design"} src={bal} alt={"bal"}/>
                 </div>
@@ -118,72 +161,13 @@ class Carousel extends React.Component {
         }
     }
 
-    render() {
-
-        this.state.settings = {
-            dots: true,
-            infinite: true,
-            speed: 1000,
-            slidesToShow: 5,
-            slidesToScroll: 1,
-            centerMode: true,
-            focusOnSelect: true,
-            arrows: false,
-            beforeChange: (current, next) => (this.state.nextSlide !== next)? setTimeout( () => this.setState({ nextSlide: next }), 10) : null ,
-            responsive: [
-                {
-                    breakpoint: 2130,
-                    settings: {
-                        slidesToShow: 3,
-
-                    }
-                },
-                {
-                    breakpoint: 1020,
-                    settings: {
-                        centerMode: false,
-                        slidesToShow: 1,
-                        arrows: true
-                    }
-                },
-                {
-                    breakpoint: 580,
-                    settings: {
-                        centerMode: false,
-                        slidesToShow: 1,
-                        arrows: false
-                    }
-                },
-            ]
-            };
-        return (
-           this.toDisplay()
-        );
-    }
+    return (toDisplay())
 }
 
 Carousel.propTypes = {
     isProject: PropTypes.bool,
     isLogo: PropTypes.bool,
     isPoster: PropTypes.bool,
-};
-
-Carousel.defaultProps = {
-    isProject: false,
-    isLogo: false,
-    isPoster: false,
-
 }
 
-const mapStateToProps = state => ({
-    projects: state.projects.projects,
-});
-
-const mapDispatchToProps = dispatch => ({
-    getAllProjects: () => dispatch(ProjectActions.allProjects())
-})
-
-export default withRouter(connect(
-    mapStateToProps,
-    mapDispatchToProps
-)(Carousel));
+export default Carousel;

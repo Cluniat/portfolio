@@ -1,24 +1,18 @@
-import React, { Component } from 'react';
+import React from 'react';
 import Carousel from "../../Components/Carousel/Carousel";
 import "./DetailsBody.scss";
 import PropTypes from "prop-types";
 
 
 
-class DetailsBody extends Component {
+const DetailsBody = ({isProject, isLogo, isPoster}) => (
+    <div className={"project-body"}>
+        <div className={"carousel"}>
+            <Carousel isProject={isProject} isLogo={isLogo} isPoster={isPoster}/>
+        </div>
+    </div>
 
-
-    render() {
-        return (
-            <div className={"project-body"}>
-                <div className={"carousel"}>
-                    <Carousel isProject={this.props.isProject} isLogo={this.props.isLogo} isPoster={this.props.isPoster}/>
-                </div>
-            </div>
-
-        );
-    }
-}
+);
 
 DetailsBody.propTypes = {
     isProject: PropTypes.bool,
@@ -30,7 +24,6 @@ DetailsBody.defaultProps = {
     isProject: false,
     isLogo: false,
     isPoster: false,
-
 }
 
 export default DetailsBody;
