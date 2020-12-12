@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
 import './FormationContent.scss';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { connect } from 'react-redux';
+import {connect, useSelector} from 'react-redux';
 import {Utils} from '../../Utils'
 
 
-class FormationContent extends Component {
+const FormationContent = () => {
 
-    _renderDescription(content) {
+    const lastEducation = useSelector(state => state.educations.lastEducation);
+
+    const _renderDescription = (content) => {
         const sup = 'ème';
         if(content.includes(sup)){
             let split = content.split(sup)
@@ -25,35 +27,26 @@ class FormationContent extends Component {
         }
     }
 
-    render() {
-        return (
-            (this.props.lastEducation && !this.props.lastEducation.loading) ?
-                <div className={"formation-content"}>
-                    <div className={"formation"}>
-                        <div className={"year"}>{this.props.lastEducation.data.start} / {this.props.lastEducation.data.end}</div>
-                        <div className={"pipe"}/>
-                        <div className={"details"}>
-                            {this._renderDescription(this.props.lastEducation.data.description)}
-                            <div className={"place"}>
-                                <FontAwesomeIcon className={"font-awesome"} icon="map-marker-alt"/>
-                                <div className={"place-name"}>{Utils.capitalizeSentence(this.props.lastEducation.data.place)}</div>
-                            </div>
+    return (
+        (lastEducation && !lastEducation.loading) ?
+            <div className={"formation-content"}>
+                <div className={"formation"}>
+                    <div className={"year"}>{lastEducation.data.start} / {lastEducation.data.end}</div>
+                    <div className={"pipe"}/>
+                    <div className={"details"}>
+                        {_renderDescription(lastEducation.data.description)}
+                        <div className={"place"}>
+                            <FontAwesomeIcon className={"font-awesome"} icon="map-marker-alt"/>
+                            <div className={"place-name"}>{Utils.capitalizeSentence(lastEducation.data.place)}</div>
                         </div>
                     </div>
-                    <div className={"more"}>
-                        <FontAwesomeIcon icon={"ellipsis-h"}/>
-                    </div>
                 </div>
-                : null
-        );
-
-    }
+                <div className={"more"}>
+                    <FontAwesomeIcon icon={"ellipsis-h"}/>
+                </div>
+            </div>
+            : null
+    );
 }
-const mapStateToProps = state => ({
-    lastEducation: state.educations.lastEducation,
-});
 
-export default connect(
-    mapStateToProps,
-    null
-)(FormationContent);
+export default FormationContent;
