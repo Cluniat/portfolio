@@ -20,8 +20,8 @@ const InfoProject = ({collapse, title, technos, description, link}) => {
         }
     }
 
-    const resizeString = () => {
-        if(title) {
+    const resizeString = (isTitle, isTechnos) => {
+        if(isTitle) {
             if(title.length > 11) {
                 return title.substr(0, 10);
             }
@@ -29,7 +29,7 @@ const InfoProject = ({collapse, title, technos, description, link}) => {
                 return title;
             }
         }
-        else if(technos) {
+        else if(isTechnos) {
             const strTechnos = technos.replace(/,/g, ' ')
             if(strTechnos.length > 27) {
                 return strTechnos.substr(0, 27).toUpperCase();
