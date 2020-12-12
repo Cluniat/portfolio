@@ -23,8 +23,7 @@ import slc from "../../Assets/designs/logo-slc.png"
 import paques from "../../Assets/designs/affiche-paques.jpg"
 import tigresse from "../../Assets/designs/logo-tigresse.jpg"
 import mtm from "../../Assets/designs/logo-mtm.png"
-
-import {ProjectTypes} from "../../Store/Project/actions";
+import {allProjects} from "../../Store/Project/actions";
 
 const Carousel= ({isProject, isLogo, isPoster}) => {
 
@@ -32,7 +31,7 @@ const Carousel= ({isProject, isLogo, isPoster}) => {
 
     const dispatch = useDispatch();
     const getAllProjects = useCallback(
-        () => dispatch({type: ProjectTypes.ALL_PROJECTS}),
+        () => dispatch(allProjects()),
         [dispatch]
     );
     const projects = useSelector(state => state.projects.projects);

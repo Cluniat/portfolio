@@ -1,8 +1,8 @@
-import {INITIAL_STATE} from './initialState'
-import {createReducer} from "reduxsauce";
-import {EducationTypes} from "./actions";
+import {INITIAL_STATE} from './initialState';
+import {createSlice} from "@reduxjs/toolkit";
+import {allEducations, lastEducation} from "./actions";
 
-export const lastEducationRequest = (state) => ({
+export const lastEducationLoading = (state) => ({
     ...state,
     lastEducation: {
         data: null,
@@ -11,26 +11,26 @@ export const lastEducationRequest = (state) => ({
     }
 })
 
-export const lastEducationSuccess = (state, {lastEducation}) => ({
+export const lastEducationSuccess = (state, {payload}) => ({
     ...state,
     lastEducation: {
-        data: lastEducation,
+        data: payload,
         loading: false,
         error: null
     }
 })
 
-export const lastEducationFailure = (state, {error}) => ({
+export const lastEducationFailure = (state, {payload}) => ({
     ...state,
     lastEducation: {
         data: null,
         loading: false,
-        error: error
+        error: payload
     }
 })
 
 
-export const allEducationsRequest = (state) => ({
+export const allEducationsLoading = (state) => ({
     ...state,
     educations: {
         data: null,
@@ -39,33 +39,36 @@ export const allEducationsRequest = (state) => ({
     }
 })
 
-export const allEducationsSuccess = (state, {educations}) =>
+export const allEducationsSuccess = (state, {payload}) =>
     ({
     ...state,
     educations: {
-        data: educations,
+        data: payload,
         loading: false,
         error: null
     }
 })
 
-export const allEducationsFailure = (state, {error}) => ({
+export const allEducationsFailure = (state, {payload}) => ({
     ...state,
     educations: {
         data: null,
         loading: false,
-        error: error
+        error: payload
     }
 })
 
-export const reducer = createReducer(INITIAL_STATE, {
-    [EducationTypes.LAST_EDUCATION]: lastEducationRequest,
-    [EducationTypes.LAST_EDUCATION_SUCCESS]: lastEducationSuccess,
-    [EducationTypes.LAST_EDUCATION_FAILURE]: lastEducationFailure,
-
-    [EducationTypes.ALL_EDUCATIONS]: allEducationsRequest,
-    [EducationTypes.ALL_EDUCATIONS_SUCCESS]: allEducationsSuccess,
-    [EducationTypes.ALL_EDUCATIONS_FAILURE]: allEducationsFailure,
-})
+export const educationReducer = createSlice({
+    name: 'educations',
+    initialState: INITIAL_STATE,
+    extraReducers: {
+        [allEducations.fulfilled]: allEducationsSuccess,
+        [allEducations.rejected]: allEducationsFailure,
+        [allEducations.pending]: allEducationsLoading,
+        [lastEducation.fulfilled]: lastEducationSuccess,
+        [lastEducation.rejected]: lastEducationFailure,
+        [lastEducation.pending]: lastEducationLoading,
+    }
+}).reducer;
 
 

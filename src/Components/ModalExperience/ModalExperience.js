@@ -1,8 +1,8 @@
 import React, {useEffect, useCallback} from 'react';
 import './ModalExperience.scss';
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import {ExperienceTypes} from "../../Store/Experience/actions";
 import {useDispatch, useSelector} from "react-redux";
+import { allExperiences} from "../../Store/Experience/actions";
 import {Utils} from "../../Utils";
 
 
@@ -10,7 +10,7 @@ const ModalExperience = () => {
 
     const dispatch = useDispatch();
     const getExperiences = useCallback(
-        () => dispatch({type: ExperienceTypes.ALL_EXPERIENCES}),
+        () => dispatch(allExperiences()),
         [dispatch]
     )
     const experiences = useSelector(state => state.experiences.experiences);

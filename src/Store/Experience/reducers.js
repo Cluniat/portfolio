@@ -1,8 +1,8 @@
-import {INITIAL_STATE} from './initialState'
-import {createReducer} from "reduxsauce";
-import {ExperienceTypes} from "./actions";
+import {INITIAL_STATE} from './initialState';
+import {createSlice} from "@reduxjs/toolkit";
+import {allExperiences, lastExperience} from "./actions";
 
-export const lastExperienceRequest = (state) => ({
+export const lastExperienceLoading = (state) => ({
     ...state,
     lastExperience: {
         data: null,
@@ -11,26 +11,26 @@ export const lastExperienceRequest = (state) => ({
     }
 })
 
-export const lastExperienceSuccess = (state, {lastExperience}) => ({
+export const lastExperienceSuccess = (state, {payload}) => ({
     ...state,
     lastExperience: {
-        data: lastExperience,
+        data: payload,
         loading: false,
         error: null
     }
 })
 
-export const lastExperienceFailure = (state, {error}) => ({
+export const lastExperienceFailure = (state, {payload}) => ({
     ...state,
     lastExperience: {
         data: null,
         loading: false,
-        error: error
+        error: payload
     }
 })
 
 
-export const allExperiencesRequest = (state) => ({
+export const allExperiencesLoading = (state) => ({
     ...state,
     experiences: {
         data: null,
@@ -39,33 +39,36 @@ export const allExperiencesRequest = (state) => ({
     }
 })
 
-export const allExperiencesSuccess = (state, {experiences}) =>
+export const allExperiencesSuccess = (state, {payload}) =>
     ({
     ...state,
     experiences: {
-        data: experiences,
+        data: payload,
         loading: false,
-        error: null
+        error: payload
     }
 })
 
-export const allExperiencesFailure = (state, {error}) => ({
+export const allExperiencesFailure = (state, {payload}) => ({
     ...state,
     experiences: {
         data: null,
         loading: false,
-        error: error
+        error: payload
     }
 })
 
-export const reducer = createReducer(INITIAL_STATE, {
-    [ExperienceTypes.LAST_EXPERIENCE]: lastExperienceRequest,
-    [ExperienceTypes.LAST_EXPERIENCE_SUCCESS]: lastExperienceSuccess,
-    [ExperienceTypes.LAST_EXPERIENCE_FAILURE]: lastExperienceFailure,
-
-    [ExperienceTypes.ALL_EXPERIENCES]: allExperiencesRequest,
-    [ExperienceTypes.ALL_EXPERIENCES_SUCCESS]: allExperiencesSuccess,
-    [ExperienceTypes.ALL_EXPERIENCES_FAILURE]: allExperiencesFailure,
-})
+export const experienceReducer= createSlice({
+    name: 'experiences',
+    initialState: INITIAL_STATE,
+    extraReducers: {
+        [allExperiences.fulfilled]: allExperiencesSuccess,
+        [allExperiences.rejected]: allExperiencesFailure,
+        [allExperiences.pending]: allExperiencesLoading,
+        [lastExperience.fulfilled]: lastExperienceSuccess,
+        [lastExperience.rejected]: lastExperienceFailure,
+        [lastExperience.pending]: lastExperienceLoading,
+    }
+}).reducer;
 
 

@@ -1,15 +1,12 @@
-import {createActions} from "reduxsauce";
+import {createAsyncThunk} from "@reduxjs/toolkit";
+import {EducationService} from "../../Services/EducationService";
 
-const { Types, Creators } = createActions( {
-    allEducations: null,
-    allEducationsSuccess: ['educations'],
-    allEducationsFailure: ['error'],
-
-    lastEducation: null,
-    lastEducationSuccess: ['lastEducation'],
-    lastEducationFailure: ['error'],
+export const allEducations = createAsyncThunk('Education/getAllEducations', async() => {
+    const response = await EducationService.getAllEducations();
+    return response.docs.map(doc => doc.data());
 })
 
-export const EducationTypes = Types
-export default Creators
-
+export const lastEducation = createAsyncThunk('Education/getLastEducation', async() => {
+    const response = await EducationService.getLastEducation();
+    return response.docs.map(doc => doc.data())[0];
+})
