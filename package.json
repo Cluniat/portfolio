@@ -13,15 +13,16 @@
     "prop-types": "latest",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-redux": "^7.2.2",
     "react-router": "^3.2.6",
     "react-router-dom": "^4.3.1",
     "react-scripts": "^3.4.4",
     "react-slick": "^0.23.2",
-    "slick-carousel": "^1.8.1",
-    "react-redux": "^7.2.2"
+    "slick-carousel": "^1.8.1"
   },
   "scripts": {
     "start": "react-scripts start",
+    "lint": "eslint . --fix",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -34,5 +35,13 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "eslint": "^7.15.0",
+    "eslint-config-standard": "^16.0.2",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.21.5"
+  }
 }
