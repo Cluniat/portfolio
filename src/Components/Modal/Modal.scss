@@ -14,7 +14,6 @@
   background-size:cover;
   background-position:top center;
   font-weight:200;
-  overflow: scroll;
   .title {
     font-size: 50px;
     color: $pink;
@@ -28,6 +27,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  overflow: auto;
 }
 
 #modal-container {
@@ -73,6 +73,8 @@
       font-weight:300;
       position:relative;
       width: 100%;
+      max-height: 100vh;
+      overflow: auto;
       h2 {
         font-size:25px;
         line-height:25px;
