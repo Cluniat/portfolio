@@ -3,11 +3,11 @@
 
 .tab {
   background-color: $grey;
-  margin: 20px 0;
+  margin-top: 20px;
   height: 100%;
-  font-size: 70px;
+  font-size: 50px;
   color: $pink;
-  padding: 20px;
+  padding: 10px 20px;
 
   &:hover {
     background-color: rgba($blue, 0.3);

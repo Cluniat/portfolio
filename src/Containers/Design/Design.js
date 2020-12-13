@@ -23,7 +23,7 @@ const Design = () => {
 
   return (
       <div className={'design-page'}>
-          <DetailsHeader title={'design'}/>
+          <DetailsHeader title={'illustrations'}/>
           <div className={'btns'}>
               <button className={logoBtnClass.join(' ')} onClick={() => setIsLogo(true)}>
                   Logos

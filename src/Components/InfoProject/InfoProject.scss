@@ -33,7 +33,7 @@
     }
     .title {
       color: $darkgrey;
-      font-size: 70px;
+      font-size: 50px;
       @media screen and (max-width: 1330px) and (min-width: 1005px) {
         font-size: 50px;
       }
@@ -76,20 +76,15 @@
   }
 
   .description {
-    font-size: 35px;
+    font-size: 17px;
     text-align: center;
-    @media screen and (max-width: 1330px) and (min-width: 1005px) {
-      font-size: 30px;
-    }
-    @media screen and (max-width: 400px) {
-      font-size: 30px;
-    }
-
+    padding: 10px;
   }
 
   .technos {
     color: $pink;
-    font-size: 40px;
+    font-size: 20px;
+    text-transform: uppercase;
     text-align: center;
     font-weight: bold;
   }

@@ -11,19 +11,20 @@
     justify-content: center;
     align-items: center;
     .project-name {
-      font-size: 45px;
+      font-size: 35px;
     }
     .technos {
-      font-size: 40px;
+      font-size: 30px;
     }
   }
   .project-description {
-    font-size: 30px;
+    font-size: 20px;
+    text-align: center;
   }
   .pipe {
     background-color: $pink;
     width: 5px;
-    height: 70px;
+    height: 50px;
     margin: 0 20px;
     //@media screen and (max-width: 837px) {
     //  display: none;
@@ -33,4 +34,5 @@
 
 .more {
   color: $pink;
+  font-size: 30px;
 }

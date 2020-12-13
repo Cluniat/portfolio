@@ -17,40 +17,18 @@ const InfoProject = ({ collapse, title, technos, description, link }) => {
     }
   }
 
-  const resizeString = (isTitle, isTechnos) => {
-    if (isTitle) {
-      if (title.length > 11) {
-        return title.substr(0, 10)
-      } else {
-        return title
-      }
-    } else if (isTechnos) {
-      const strTechnos = technos.replace(/,/g, ' ')
-      if (strTechnos.length > 27) {
-        return strTechnos.substr(0, 27).toUpperCase()
-      } else {
-        return strTechnos.toUpperCase()
-      }
-    } else {
-      if (description.length > 130) {
-        return description.substr(0, 130)
-      } else {
-        return description
-      }
-    }
-  }
   return (
       <div className={'info-project'}>
           <div className={'light-square top'}>
-              <div className={'title'}> {resizeString(true, false)} </div>
+              <div className={'title'}> {title.toUpperCase()} </div>
           </div>
           {
               <div className={addDescription()}>
-                  <div className={'description'}> {resizeString(false, false)} </div>
+                  <div className={'description'}> {description} </div>
               </div>
                 }
           <div className={'light-square bottom'}>
-              <div className={'technos'}>{resizeString(false, true)}</div>
+              <div className={'technos'}>{technos.split(',').join(', ')}</div>
               <a href={link} className={'git-link'} target={'_blank'} rel= {'noopener noreferrer'}>
                   <FontAwesomeIcon icon={faGithub}/> See on GitHub
               </a>

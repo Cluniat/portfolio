@@ -29,14 +29,17 @@ export const lastExperienceFailure = (state, { payload }) => ({
   },
 })
 
-export const allExperiencesLoading = (state) => ({
-  ...state,
-  experiences: {
-    data: null,
-    loading: true,
-    error: null,
-  },
-})
+export const allExperiencesLoading = (state) => {
+  console.log('STATE', state)
+  return ({
+    ...state,
+    experiences: {
+      data: null,
+      loading: true,
+      error: null,
+    },
+  })
+}
 
 export const allExperiencesSuccess = (state, { payload }) =>
   ({

@@ -8,13 +8,13 @@ const ExperienceContent = () => {
   const lastExperience = useSelector(state => state.experiences.lastExperience)
 
   return (
-    (lastExperience && !lastExperience.loading)
+    (lastExperience.data && !lastExperience.loading)
       ? <div className={'experience-content'}>
           <div className={'experience'}>
               <div className={'year'}>{lastExperience.data.date}</div>
               <div className={'pipe'}/>
               <div className={'details'}>
-                  <div className={'poste'}>{Utils.capitalize(lastExperience.data.description)}</div>
+                  <div className={'poste'}>{lastExperience.data.description}</div>
                   <div className={'place'}>
                       <FontAwesomeIcon className={'font-awesome'} icon="map-marker-alt"/>
                       <div

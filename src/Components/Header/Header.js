@@ -1,48 +1,41 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import './Header.scss'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import logo from '../../Assets/images/philippine-cluniat.png'
 import photo from '../../Assets/images/PHIPHI.png'
 
-const Header = () => (
-    <div className="header">
+const Header = () => {
+  const [isAnimated, setIsAnimated] = useState(false)
 
-        <div className={'identity'}>
-            <div className={'photo-cover'}>
-                <div className={'photo-border'}></div>
-                <img className={'photo'} src={photo} alt={'Philippine Cluniat'}/>
-            </div>
-        </div>
+  useEffect(() => {
+    setIsAnimated(true)
+  }, [])
 
-        <div className={'info'}>
-            <div className={'line'}>
-                <img className={'logo'} src={logo} alt={'Philippine Cluniat'}/>
-            </div>
-            <div className={'line'}>
-                <FontAwesomeIcon className={'font-awesome'} icon="map-marker-alt"/>
-                <div className="text">LYON</div>
-            </div>
-            <div className={'line'}>
-                <FontAwesomeIcon className={'font-awesome'} icon="envelope"/>
-                <div className="text">philippine.cluniat@gmail.com</div>
-            </div>
-            <a className={'line'} href={'https://github.com/Cluniat'} target={'_blank'} rel= {'noopener noreferrer'}>
-                <FontAwesomeIcon className={'font-awesome'} icon={['fab', 'github']}/>
-                <div className="text">CLUNIAT</div>
-            </a>
-            <a className={'line'} href={'https://www.linkedin.com/in/philippine-cluniat-39ab0b158/'} target={'_blank'} rel= {'noopener noreferrer'}>
-                <FontAwesomeIcon className={'font-awesome'} icon={['fab', 'linkedin']}/>
-                <div className="text">Philippine Cluniat</div>
-            </a>
-        </div>
+  return (
+      <div className="header">
 
-        <div className={'icons'}>
-            <i className={'icon-world'}/>
-            <i className={'icon-tennis-raquet-and-ball'}/>
-            <i className={'icon-books-stack-of-three'}/>
-        </div>
+          <div className={'info'}>
+              <img className={'logo'} src={logo} alt={'Philippine Cluniat'}/>
+              <div className={'line'}>
+                  <a className={'icon'} href={'mailto:philippine.cluniat@gmail.com'}>
+                      <FontAwesomeIcon className={'font-awesome'} icon="envelope"/>
+                  </a>
+                  <a className={'icon'} href={'https://github.com/Cluniat'} target={'_blank'} rel={'noopener noreferrer'}>
+                      <FontAwesomeIcon className={'font-awesome'} icon={['fab', 'github']}/>
+                  </a>
+                  <a className={'icon'} href={'https://www.linkedin.com/in/philippine-cluniat-39ab0b158/'}
+                   target={'_blank'} rel={'noopener noreferrer'}>
+                      <FontAwesomeIcon className={'font-awesome'} icon={['fab', 'linkedin']}/>
+                  </a>
+              </div>
+          </div>
 
-    </div>
-)
+          <div className={isAnimated ? 'photo-cover slideIn' : 'photo-cover'}>
+              <img className={'photo'} src={photo} alt={'Philippine Cluniat'}/>
+          </div>
+
+      </div>
+  )
+}
 
 export default Header

@@ -2,19 +2,19 @@ import React from 'react'
 import './CompetenceContent.scss'
 import vuejs from '../../Assets/images/vuejs.png'
 import reactjs from '../../Assets/images/reactjs.png'
-import angular from '../../Assets/images/angular.png'
-import java from '../../Assets/images/java.png'
-import laravel from '../../Assets/images/laravel.png'
-import netcore from '../../Assets/images/aspnetcore.png'
+import rn from '../../Assets/images/rn.png'
+import javascript from '../../Assets/images/js.png'
+import node from '../../Assets/images/node.png'
+import graphql from '../../Assets/images/graphql.png'
 
 const CompetenceContent = () => (
     <div className={'logos'}>
-        <img className={'icon'} src={vuejs} alt={'vuejs'} height={'103px'} width={'103px'}/>
-        <img className={'icon'} src={reactjs} alt={'reactjs'} height={'118px'} width={'114px'}/>
-        <img className={'icon'} src={angular} alt={'angular'} height={'148px'} width={'148px'}/>
-        <img className={'icon'} src={java} alt={'java'} height={'148px'} width={'74px'}/>
-        <img className={'icon'} src={laravel} alt={'laravel'} height={'76px'} width={'222px'}/>
-        <img className={'icon'} src={netcore} alt={'netcore'} height={'112px'} width={'148px'}/>
+        <img className={'icon'} src={javascript} alt={'javascript'}/>
+        <img className={'icon'} src={rn} alt={'react-native'}/>
+        <img className={'icon'} src={reactjs} alt={'reactjs'}/>
+        <img className={'icon'} src={vuejs} alt={'vuejs'}/>
+        <img className={'icon'} src={node} alt={'nodejs'}/>
+        <img className={'icon'} src={graphql} alt={'graphql'}/>
     </div>
 )
 

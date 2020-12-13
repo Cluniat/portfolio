@@ -3,16 +3,25 @@
 .modal-experience {
   display: flex;
   justify-content: stretch;
-  height: 100%;
+  @media screen and (max-width: 565px) {
+    justify-content: center;
+  }
 
   .block {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
   }
+  .skills {
+    @media screen and (max-width: 870px) {
+      display: flex;
+      flex-wrap: wrap;
+      width: 30%;
+    }
+  }
   .experience {
     margin-top: 20px;
-    font-size: 20px;
+    font-size: 15px;
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
@@ -24,20 +33,20 @@
       margin-top: 0;
       font-size: 15px;
     }
-    @media screen and (max-width: 705px) {
+    @media screen and (max-width: 565px) {
       flex-direction: column;
-      align-items: flex-start;
+      align-items: center;
+      margin-bottom: 10px;
     }
     .font-awesome {
       color: $blue;
       margin-right: 10px;
     }
     .year {
-      font-size: 40px;
-      width: 157px;
+      font-size: 20px;
+      width: 100px;
       text-align: right;
       @media screen and (max-width: 837px) {
-        font-size: 20px;
         text-align: center;
       }
     }
@@ -46,10 +55,11 @@
       width: 5px;
       height: 70px;
       margin: 0 20px;
-      @media screen and (max-width: 705px) {
+      @media screen and (max-width: 565px) {
         display: none;
       }
     }
+
     .dots {
       font-size: 30px;
       color: $blue;
@@ -64,14 +74,12 @@
         font-weight: bold;
         color: $blue;
       }
-      @media screen and (max-width: 705px) {
+      @media screen and (max-width: 565px) {
         margin: 10px 10px;
       }
     }
   }
 }
-
-
 .place {
   display: flex;
   align-items: center;

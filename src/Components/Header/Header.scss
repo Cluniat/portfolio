@@ -3,49 +3,41 @@
 
 .header {
   background-color: $blue;
-  height: 400px;
   display: flex;
-  justify-content: space-around;
-  @media screen and (max-width: 650px) {
-    flex-direction: column;
-    padding: 0 20px;
-  }
+  justify-content: space-between;
+  overflow: hidden;
 
   .logo {
-    height: 100px;
     width: 300px;
-    @media screen and (max-width: 370px) {
-      width: 250px;
-    }
-  }
-
-  .identity {
-    display: flex;
-    flex-direction: column;
-    width: 250px;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
-    @media screen and (max-width: 650px) {
-      display: none;
+    @media screen and (max-width: 530px) {
+      width: 200px;
+      margin-bottom: 20px;
     }
   }
 
   .photo-cover {
-    height: 300px;
-    width: 100%;
     margin-bottom: 10px;
-    .photo-border {
-      width: 210px;
-      height: 300px;
-      z-index: 1;
-      position: absolute;
-      background: radial-gradient(closest-corner, transparent 50%, #A2DED0);
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    transform: translate(500px, 500px);
+    transition: transform .5s ease 0s;
+    &.slideIn {
+      transform: none;
     }
     .photo {
-      object-fit: cover;
-      width: 100%;
-      height: 100%;
+      object-fit: contain;
+      width: 200px;
+      transform: rotateZ(-30deg);
+      @media screen and (max-width: 530px) {
+        width: 150px;
+      }
+      @media screen and (max-width: 430px) {
+        width: 80px;
+      }
+      @media screen and (max-width: 350px) {
+        display: none;
+      }
     }
   }
 
@@ -64,12 +56,22 @@
 
   .line {
     display: flex;
-    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .icon {
     color: $white;
+    display: flex;
+    align-items: center;
     font-size: 25px;
     text-decoration: none;
+    margin-left: 30px;
+    &:first-child{
+      margin-left: 0;
+    }
     .font-awesome {
       font-size: 40px;
+      margin-right: 10px;
     }
   }
 
@@ -77,46 +79,14 @@
     color: $pink;
   }
 
-  .text {
-    margin-left: 20px;
-  }
-
   .info {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: space-around;
-    width: 330px;
-    height: 380px;
-    padding: 10px;
+    padding: 10px 10px 10px 50px;
     @media screen and (max-width: 320px) {
-      width: 100%;
-    }
-  }
-
-  .icons {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    color: $pink;
-    font-size: 80px;
-    -webkit-text-fill-color: $pink;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: $white;
-    @media screen and (max-width: 800px) and (min-width: 650px) {
-      display: none;
-    }
-    @media screen and (max-width: 650px) and (min-width: 430px) {
-      display: flex;
-      position: absolute;
-      right: 20px;
-      top: 0;
-      height: 400px;
-    }
-
-    @media screen and (max-width: 430px) {
-      display: none;
+      padding: 10px;
     }
   }
 
