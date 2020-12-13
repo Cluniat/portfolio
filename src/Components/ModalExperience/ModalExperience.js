@@ -26,20 +26,19 @@ const ModalExperience = () => {
                       <div className={'year'}>{experience.date}</div>
                       <div className={'pipe'}/>
                       <div className={'details'}>
-                          <div className={'description'}>{Utils.capitalize(experience.description)}</div>
+                          <div className={'description'}>{experience.description}</div>
                           <div className={'place'}>
                               <FontAwesomeIcon className={'font-awesome'} icon="map-marker-alt"/>
                               <div className={'place-name'}>{experience.company} {Utils.capitalize(experience.place)}</div>
                           </div>
                       </div>
                   </div>
-              ))};
+              ))}
           </div>
-          <div className={'block'}>
+          <div className={'block skills'}>
               {experiences.data.map((experience, index) => (
                   <div className={'experience'} key={`xp-${index}`}>
                       <div className={'dots'}>
-                          <FontAwesomeIcon icon={'ellipsis-h'}/>
                           <FontAwesomeIcon icon={'ellipsis-h'}/>
                       </div>
                       <div className={'cpt'}>
@@ -49,7 +48,7 @@ const ModalExperience = () => {
                         )}
                       </div>
                   </div>
-              ))};
+              ))}
           </div>
       </div>
       : null

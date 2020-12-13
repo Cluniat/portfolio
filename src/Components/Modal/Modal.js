@@ -11,8 +11,10 @@ const Modal = ({ visible, onClose, title, children }) => {
     if (visible) {
       if (animateIn) {
         setContainerClass([...containerClass, 'out'])
+        document.body.classList.remove('overflow-hidden')
       } else {
         setModalClass([...modalClass, 'modal-active'])
+        document.body.classList.add('overflow-hidden')
       }
     }
   }, [visible, animateIn])

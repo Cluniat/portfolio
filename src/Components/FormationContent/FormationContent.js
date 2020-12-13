@@ -26,7 +26,7 @@ const FormationContent = () => {
   }
 
   return (
-    (lastEducation && !lastEducation.loading)
+    (lastEducation.data && !lastEducation.loading)
       ? <div className={'formation-content'}>
           <div className={'formation'}>
               <div className={'year'}>{lastEducation.data.start} / {lastEducation.data.end}</div>

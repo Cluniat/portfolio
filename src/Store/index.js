@@ -1,4 +1,4 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit'
+import { configureStore, combineReducers, getDefaultMiddleware } from '@reduxjs/toolkit'
 import { experienceReducer } from './Experience/reducers'
 import { projectReducer } from './Project/reducers'
 import { educationReducer } from './Education/reducers'
@@ -10,4 +10,7 @@ const rootReducer = combineReducers({
 
 })
 
-export const store = configureStore({ reducer: rootReducer })
+export const store = configureStore({
+  reducer: rootReducer,
+  middleware: getDefaultMiddleware({ serializableCheck: false }),
+})

@@ -24,8 +24,12 @@ import paques from '../../Assets/designs/affiche-paques.jpg'
 import tigresse from '../../Assets/designs/logo-tigresse.jpg'
 import mtm from '../../Assets/designs/logo-mtm.png'
 import { allProjects } from '../../Store/Project/actions'
+import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const Carousel = ({ isProject, isLogo, isPoster }) => {
+  library.add(faSpinner)
   const [nextSlide, setNextSlide] = useState(0)
 
   const dispatch = useDispatch()
@@ -79,22 +83,29 @@ const Carousel = ({ isProject, isLogo, isPoster }) => {
   }
 
   const toDisplay = () => {
-    if (isProject && projects && !projects.loading) {
-      return <Slider {...settings}>
-          { projects.data.map((project, index) => (
-              <div key={`project-${index}`}>
-                  <InfoProject
+    if (isProject) {
+      if (projects && !projects.loading) {
+        return <Slider {...settings}>
+            { projects.data.map((project, index) => (
+                <div key={`project-${index}`}>
+                    <InfoProject
                             title={project.name}
                             description={project.description}
                             technos={project.technos.toString()}
                             collapse={nextSlide !== index}
                             link={project.link}
                         />
-              </div>
-          ))}
-      </Slider>
+                </div>
+            ))}
+        </Slider>
+      } else {
+        return (
+            <div className={'fill-center'}>
+                <FontAwesomeIcon icon={faSpinner} spin />
+            </div>
+        )
+      }
     } else if (isLogo) {
-      console.log('SETTINGS', settings)
       return <Slider {...settings}>
           <div>
               <img className={'design'} src={polytech2018} alt={'polytech_2018'}/>

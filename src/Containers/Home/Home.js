@@ -37,6 +37,7 @@ const Home = () => {
     getLastEducation()
     getLastExperience()
     getLastProject()
+    document.body.classList.remove('overflow-hidden')
   }, [getLastEducation, getLastExperience, getLastProject])
 
   return (
@@ -57,7 +58,7 @@ const Home = () => {
               <FormationContent/>
           </Tab>
           <Link to={'/design'}>
-              <Tab title={'Designs'} hasModal={false}>
+              <Tab title={'Illustrations'} hasModal={false}>
                   <DesignContent/>
               </Tab>
           </Link>
